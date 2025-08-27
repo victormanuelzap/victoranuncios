@@ -43,17 +43,17 @@ import '../css/base.css'
   <div class='container h-full flex items-center justify-between px-4 md:px-8 lg:px-16'>
     <!-- Logo + texto en PC -->
     <a href='/' class='flex items-center gap-2'>
-      <img src='/logo.png' class='h-16' alt='Victor Anuncios' />
+<img src={`${import.meta.env.BASE_URL}logo.png`} class="h-16" alt="Victor Anuncios" />
       <span class="font-bold text-white text-2xl drop-shadow-md">VICTOR ANUNCIOS</span>
     </a>
     <!-- Navegación -->
     <nav class='flex gap-6 text-white font-[500]'>
-      <a href='/'>INICIO</a>
-      <a href='/#productos'>PRODUCTOS</a>
-      <a href='/#tienda'>TIENDA</a>
-      <a href='/#servicios'>SERVICIOS</a>
-      <a href='/#cursos'>CURSOS</a>
-      <a href='/contacto'>CONTACTOS</a>
+      <a href={`${import.meta.env.BASE_URL}`}>INICIO</a>
+<a href={`${import.meta.env.BASE_URL}#productos`}>PRODUCTOS</a>
+<a href={`${import.meta.env.BASE_URL}#tienda`}>TIENDA</a>
+<a href={`${import.meta.env.BASE_URL}#servicios`}>SERVICIOS</a>
+<a href={`${import.meta.env.BASE_URL}#cursos`}>CURSOS</a>
+<a href={`${import.meta.env.BASE_URL}contacto`}>CONTACTO</a>
     </nav>
   </div>
 </div>
