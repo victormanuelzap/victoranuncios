@@ -2,7 +2,9 @@
 interface Props { title?: string }
 const { title } = Astro.props
 import '../css/base.css'
+const BASE_URL = import.meta.env.BASE_URL;
 ---
+ 
 
 <!doctype html>
 <html lang="es">
@@ -18,13 +20,17 @@ import '../css/base.css'
     <!-- Redes sociales -->
     <meta property="og:title" content="Victor Anuncios - Letreros y Publicidad en Arequipa" />
     <meta property="og:description" content="Expertos en letreros luminosos, gigantografías y diseño gráfico en Arequipa. Instalación rápida y profesional." />
-    <meta property="og:image" content="/assets/banners/banner-1.jpg" />
+
+
+<meta property="og:image" content={`${BASE_URL}assets/banners/banner-1.jpg`} />
+
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://victoranuncios.com/" />
 
-    <!-- Iconos -->
-    <link rel="icon" type="image/png" href="/favicon.png" sizes="64x64" />
-    <link rel="apple-touch-icon" href="/favicon.png" />
+<!-- Iconos -->
+<link rel="icon" type="image/png" href={`${BASE_URL}favicon.png`} sizes="64x64" />
+<link rel="apple-touch-icon" href={`${BASE_URL}favicon.png`} />
+
 
     <!-- Fuentes -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -63,7 +69,7 @@ import '../css/base.css'
       <div class='container mx-auto px-4'>
         <div class='flex items-center justify-between h-16'>
           <a href='/' class='flex items-center gap-2'>
-            <img src='/logo.png' class='h-10 w-auto' alt='Victor Anuncios' />
+<img src={`${BASE_URL}logo.png`} class='h-10 w-auto' alt='Victor Anuncios' />
             <span class="font-bold text-white text-xl drop-shadow-md">VICTOR ANUNCIOS</span>
           </a>
           <button id='menu-toggle' class='text-white focus:outline-none' aria-label="Abrir menú">
@@ -73,19 +79,20 @@ import '../css/base.css'
       </div>
     </nav>
 
-    <!-- Menú móvil desplegable -->
-    <div id='menu' class='hidden md:hidden bg-primary text-white fixed top-0 w-full z-40 pt-20 h-screen'>
-      <div class='container mx-auto px-4'>
-        <div class='flex flex-col gap-4 py-4 text-lg'>
-          <a href='/'>Inicio</a><hr class='divider' />
-          <a href='/#productos'>Productos</a><hr class='divider' />
-          <a href='/#tienda'>Tienda</a><hr class='divider' />
-          <a href='/#servicios'>Servicios</a><hr class='divider' />
-          <a href='/#cursos'>Cursos</a><hr class='divider' />
-          <a href='/contacto'>Contacto</a>
-        </div>
-      </div>
+   <!-- Menú móvil desplegable -->
+<div id='menu' class='hidden md:hidden bg-primary text-white fixed top-0 w-full z-40 pt-20 h-screen'>
+  <div class='container mx-auto px-4'>
+    <div class='flex flex-col gap-4 py-4 text-lg'>
+      <a href={`${BASE_URL}`}>Inicio</a><hr class='divider' />
+      <a href={`${BASE_URL}#productos`}>Productos</a><hr class='divider' />
+      <a href={`${BASE_URL}#tienda`}>Tienda</a><hr class='divider' />
+      <a href={`${BASE_URL}#servicios`}>Servicios</a><hr class='divider' />
+      <a href={`${BASE_URL}#cursos`}>Cursos</a><hr class='divider' />
+      <a href={`${BASE_URL}contacto`}>Contacto</a>
     </div>
+  </div>
+</div>
+
 
     <!-- ======= CONTENIDO DE CADA PÁGINA ======= -->
     <slot />
@@ -94,7 +101,7 @@ import '../css/base.css'
     <footer class='bg-blue-700 py-10 mt-20'>
       <div class='pb-10'>
         <div class='flex gap-4 justify-center items-center'>
-          <img src='/logo.png' class='w-20' alt='logo' />
+         <img src={`${BASE_URL}logo.png`} class='w-20' alt='logo' />
           <div class='text-white font-bold text-2xl'>Victor Anuncios</div>
         </div>
         <p class='text-center px-4 text-white pt-3'>
