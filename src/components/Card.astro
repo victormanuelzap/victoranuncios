@@ -1,24 +1,29 @@
 ---
 interface Props {
-    title1: string
-    title2: string
-    image: string
-    variant: string
-    top1?: string
-    top2?: string
-    link?: string
+  title1: string
+  title2: string
+  image: string
+  variant: string
+  top1?: string
+  top2?: string
+  link?: string
 }
 
 const { title1, title2, image, variant, top1, top2, link } = Astro.props
+
 const variats: any = {
-    red: {
-        container: 'bg-primary',
-    },
-    blue: {
-        container: 'bg-blue-700',
-    },
+  red: { container: 'bg-primary' },
+  blue: { container: 'bg-blue-700' },
 }
+
+// 👇 BASE_URL para corregir rutas en GitHub Pages
+const B = import.meta.env.BASE_URL
+
+// Si la imagen es relativa, la normalizamos para que funcione en producción
+const cleaned = image.startsWith('/') ? image.slice(1) : image
+const imageUrl = /^https?:\/\//.test(image) ? image : `${B}${cleaned}`
 ---
+
 
 <div
     class={`relative h-[530px] rounded-[3.5rem] flex justify-center ${variats[variant].container}`}
@@ -39,7 +44,8 @@ const variats: any = {
         }
     </div>
     <div class='h-full pt-20'>
-        <img src={image} class='h-[280px]' loading='lazy' />
+        <img src={imageUrl} class='h-[280px]' loading='lazy' />
+
     </div>
     <div
         class='absolute uppercase text-[2rem] leading-[2.5rem] lg:text-[2rem] lg:leading-[2rem] 2xl:text-[3rem] 2xl:leading-[2.8rem] font-extrabold text-center bottom-10'
