@@ -1,0 +1,80 @@
+---
+import Layout from '../layouts/Layout.astro'
+---
+
+<Layout title='Victor Anuncios'>
+    <div class='bg-gray-50 font-sans py-10'>
+        <div class='container mx-auto p-8 md:p-12 lg:p-16'>
+            <h1
+                class='pb-5 text-3xl md:text-4xl font-bold text-center text-gray-800 mb-10'
+            >
+                Contáctanos
+            </h1>
+
+            <div
+                class='grid grid-cols-1 md:grid-cols-2 gap-8 rounded-lg overflow-hidden shadow-md bg-white'
+            >
+                <div class='h-96 md:h-auto'>
+                    <iframe
+                        src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3826.961788986068!2d-71.54910438522797!3d-16.40981548851692!2d-71.54910438522797!3d-16.40981548851692!2d-71.54910438522797!3d-16.40981548851692!2d-71.54910438522797!3d-16.40981548851692!3d-16.40981548851692!2d-71.54910438522797!3d-16.40981548851692!3d-16.40981548851692!2d-71.54910438522797!3d-16.40981548851692!5e0!3m2!1ses!2spe!4v1686067898183!5m2!1ses!2spe'
+                        width='100%'
+                        height='100%'
+                        style='border:0;'
+                        allowfullscreen=''
+                        class='rounded-xl'
+                        loading='lazy'></iframe>
+                </div>
+
+                <form class='bg-white p-8 mt-10'>
+                    <div class='mb-4'>
+                        <label
+                            for='nombre'
+                            class='block text-gray-600 text-sm font-medium mb-2'
+                            >Nombre:</label
+                        >
+                        <input
+                            type='text'
+                            id='nombre'
+                            name='nombre'
+                            class='shadow-sm appearance-none border rounded-xl w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:ring focus:border-blue-300'
+                        />
+                    </div>
+                    <div class='mb-4'>
+                        <label
+                            for='email'
+                            class='block text-gray-600 text-sm font-medium mb-2'
+                            >Email:</label
+                        >
+                        <input
+                            type='email'
+                            id='email'
+                            name='email'
+                            class='shadow-sm appearance-none border rounded-xl w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:ring focus:border-blue-300'
+                        />
+                    </div>
+                    <div class='mb-4'>
+                        <label
+                            for='mensaje'
+                            class='block text-gray-600 text-sm font-medium mb-2'
+                            >Mensaje:</label
+                        >
+                        <textarea
+                            id='mensaje'
+                            name='mensaje'
+                            rows='5'
+                            class='shadow-sm appearance-none border rounded-xl w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:ring focus:border-blue-300'
+                        ></textarea>
+                    </div>
+                    <div class='flex items-center justify-center'>
+                        <button
+                            class='bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-xl focus:outline-none focus:shadow-outline'
+                            type='submit'
+                        >
+                            Enviar
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</Layout>

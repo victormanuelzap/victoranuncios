@@ -1,0 +1,176 @@
+---
+interface Props { title?: string }
+const { title } = Astro.props
+import '../css/base.css'
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- SEO -->
+    <title>{title ? `${title} | Victor Anuncios` : 'Victor Anuncios | Letreros Luminosos y Gigantografías en Arequipa'}</title>
+    <meta name="description" content="Victor Anuncios en Arequipa. Letreros luminosos, letreros 3D, gigantografías, vinilos, stickers, tarjetas y publicidad con instalación profesional." />
+    <meta name="keywords" content="letreros Arequipa, letreros luminosos Arequipa, gigantografías Arequipa, letreros 3D, vinilos publicitarios, Victor Anuncios" />
+
+    <!-- Redes sociales -->
+    <meta property="og:title" content="Victor Anuncios - Letreros y Publicidad en Arequipa" />
+    <meta property="og:description" content="Expertos en letreros luminosos, gigantografías y diseño gráfico en Arequipa. Instalación rápida y profesional." />
+    <meta property="og:image" content="/assets/banners/banner-1.jpg" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://victoranuncios.com/" />
+
+    <!-- Iconos -->
+    <link rel="icon" type="image/png" href="/favicon.png" sizes="64x64" />
+    <link rel="apple-touch-icon" href="/favicon.png" />
+
+    <!-- Fuentes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+    <!-- Iconos Boxicons -->
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+
+    <!-- Splide slider -->
+    <link href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css" rel="stylesheet" />
+  </head>
+  <body>
+  <!-- ======= HEADER (desktop) ======= -->
+<div class='hidden md:block h-24 bg-primary sticky top-0 z-50'>
+  <div class='container h-full flex items-center justify-between px-4 md:px-8 lg:px-16'>
+    <!-- Logo + texto en PC -->
+    <a href='/' class='flex items-center gap-2'>
+      <img src='/logo.png' class='h-16' alt='Victor Anuncios' />
+      <span class="font-bold text-white text-2xl drop-shadow-md">VICTOR ANUNCIOS</span>
+    </a>
+    <!-- Navegación -->
+    <nav class='flex gap-6 text-white font-[500]'>
+      <a href='/'>INICIO</a>
+      <a href='/#productos'>PRODUCTOS</a>
+      <a href='/#tienda'>TIENDA</a>
+      <a href='/#servicios'>SERVICIOS</a>
+      <a href='/#cursos'>CURSOS</a>
+      <a href='/contacto'>CONTACTOS</a>
+    </nav>
+  </div>
+</div>
+
+    <!-- ======= HEADER (móvil) ======= -->
+    <nav class='bg-primary text-white sticky top-0 w-full z-50 md:hidden'>
+      <div class='container mx-auto px-4'>
+        <div class='flex items-center justify-between h-16'>
+          <a href='/' class='flex items-center gap-2'>
+            <img src='/logo.png' class='h-10 w-auto' alt='Victor Anuncios' />
+            <span class="font-bold text-white text-xl drop-shadow-md">VICTOR ANUNCIOS</span>
+          </a>
+          <button id='menu-toggle' class='text-white focus:outline-none' aria-label="Abrir menú">
+            <svg class='h-6 w-6 fill-current' viewBox='0 0 24 24'><path d='M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z'/></svg>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Menú móvil desplegable -->
+    <div id='menu' class='hidden md:hidden bg-primary text-white fixed top-0 w-full z-40 pt-20 h-screen'>
+      <div class='container mx-auto px-4'>
+        <div class='flex flex-col gap-4 py-4 text-lg'>
+          <a href='/'>Inicio</a><hr class='divider' />
+          <a href='/#productos'>Productos</a><hr class='divider' />
+          <a href='/#tienda'>Tienda</a><hr class='divider' />
+          <a href='/#servicios'>Servicios</a><hr class='divider' />
+          <a href='/#cursos'>Cursos</a><hr class='divider' />
+          <a href='/contacto'>Contacto</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ======= CONTENIDO DE CADA PÁGINA ======= -->
+    <slot />
+
+    <!-- ======= FOOTER ======= -->
+    <footer class='bg-blue-700 py-10 mt-20'>
+      <div class='pb-10'>
+        <div class='flex gap-4 justify-center items-center'>
+          <img src='/logo.png' class='w-20' alt='logo' />
+          <div class='text-white font-bold text-2xl'>Victor Anuncios</div>
+        </div>
+        <p class='text-center px-4 text-white pt-3'>
+          Tarjetas de presentación, Letreros 3D, Cortes Láser, Gigantografías, Volantes, Imantados y Afiches.
+        </p>
+      </div>
+      <div class='container'>
+        <div class='grid md:grid-cols-3 gap-10 md:gap-20'>
+          <div class='space-y-5'>
+            <div>
+              <h2 class='font-[500] text-white'>Productos</h2>
+              <div class='h-[1px] bg-white w-full mb-2'></div>
+              <div class='text-gray-300 font-light'>Banners</div>
+              <div class='text-gray-300 font-light'>Marcos y Estructuras</div>
+              <div class='text-gray-300 font-light'>Letreros 3D</div>
+            </div>
+            <div>
+              <h2 class='font-[500] text-white'>Servicios</h2>
+              <div class='h-[1px] bg-white w-full mb-2'></div>
+              <div class='text-gray-300 font-light'>Marketing Digital</div>
+              <div class='text-gray-300 font-light'>Instalación</div>
+              <div class='text-gray-300 font-light'>Técnico / formateo</div>
+            </div>
+          </div>
+          <div>
+            <h2 class='font-[500] text-white'>Enlace</h2>
+            <div class='h-[1px] bg-white w-full mb-2'></div>
+            <div class='text-gray-300 font-light'>Productos</div>
+            <div class='text-gray-300 font-light'>Tienda</div>
+            <div class='text-gray-300 font-light'>Servicios</div>
+            <div class='text-gray-300 font-light'>Cursos</div>
+            <div class='text-gray-300 font-light'>Contacto</div>
+          </div>
+          <div class='space-y-5'>
+            <h2 class='font-[500] text-white'>Contactos</h2>
+            <div class='h-[1px] bg-white w-full mb-2'></div>
+            <div class='text-gray-300 font-light'>+51 946182531</div>
+            <div class='text-gray-300 font-light'>@worlkontrol</div>
+            <div class='text-gray-300 font-light'>Av. Ramón Castilla 1004, Cayma</div>
+            <div>
+              <h2 class='font-[500] text-white mt-6'>Redes Sociales</h2>
+              <div class='h-[1px] bg-white w-full mb-2'></div>
+              <div class='text-white flex gap-4 mt-2 text-2xl'>
+                <a href='https://www.instagram.com/' target='_blank'><i class='bx bxl-instagram'></i></a>
+                <a href='https://www.facebook.com/WORLKONTROLSYSTEM' target='_blank'><i class='bx bxl-facebook'></i></a>
+                <a href='https://wa.me/51946182531' target='_blank'><i class='bx bxl-whatsapp'></i></a>
+                <a href='https://www.tiktok.com/' target='_blank'><i class='bx bxl-tiktok'></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class='text-center bg-[#011efe] text-gray-200 text-sm py-4 mt-8'>
+        © 2024 Copyright: Worlkontrol System
+      </div>
+    </footer>
+
+    <!-- ======= BOTONES FLOTANTES ======= -->
+    <div class="social-buttons">
+      <a href="https://www.instagram.com/" target="_blank" class="social instagram"><i class="bx bxl-instagram"></i></a>
+      <a href="https://www.facebook.com/VictorAnuncioss/" target="_blank" class="social facebook"><i class="bx bxl-facebook"></i></a>
+      <a href="https://www.tiktok.com/@victor.anuncios" target="_blank" class="social tiktok"><i class="bx bxl-tiktok"></i></a>
+    </div>
+
+    <a href="https://wa.me/51946182531?text=Hola,%20quiero%20más%20información" class="whatsapp" target="_blank">
+      <i class="bx bxl-whatsapp"></i>
+    </a>
+
+    <!-- JS del menú móvil -->
+    <script is:raw>
+      const menuToggle = document.getElementById('menu-toggle');
+      const menu = document.getElementById('menu');
+      if (menuToggle && menu) {
+        menuToggle.addEventListener('click', () => menu.classList.toggle('hidden'));
+        document.querySelectorAll('#menu a').forEach(a => a.addEventListener('click', () => menu.classList.add('hidden')));
+      }
+    </script>
+  </body>
+</html>

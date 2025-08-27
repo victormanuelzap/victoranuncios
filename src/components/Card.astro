@@ -1,0 +1,55 @@
+---
+interface Props {
+    title1: string
+    title2: string
+    image: string
+    variant: string
+    top1?: string
+    top2?: string
+    link?: string
+}
+
+const { title1, title2, image, variant, top1, top2, link } = Astro.props
+const variats: any = {
+    red: {
+        container: 'bg-primary',
+    },
+    blue: {
+        container: 'bg-blue-700',
+    },
+}
+---
+
+<div
+    class={`relative h-[530px] rounded-[3.5rem] flex justify-center ${variats[variant].container}`}
+    data-aos='flip-left'
+>
+    <div class='absolute top-6 left-0 right-0 uppercase text-center'>
+        {top1 && <span class='text-white text-3xl font-bold'>{top1}</span>}
+        <!-- outline -->
+        {
+            top2 && (
+                <span
+                    class='text-transparent text-3xl font-bold'
+                    style='-webkit-text-stroke: 1px #fff;'
+                >
+                    {top2}
+                </span>
+            )
+        }
+    </div>
+    <div class='h-full pt-20'>
+        <img src={image} class='h-[280px]' loading='lazy' />
+    </div>
+    <div
+        class='absolute uppercase text-[2rem] leading-[2.5rem] lg:text-[2rem] lg:leading-[2rem] 2xl:text-[3rem] 2xl:leading-[2.8rem] font-extrabold text-center bottom-10'
+    >
+        <span class='text-white'>
+            {title1}
+        </span>
+        <br />
+        <span style='-webkit-text-stroke: 1px #fff;' class='text-transparent'>
+            {title2}
+        </span>
+    </div>
+</div>

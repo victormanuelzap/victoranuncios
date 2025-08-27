@@ -1,0 +1,27 @@
+---
+import Layout from '../../layouts/Layout.astro'
+
+const images = ['img-1.png', 'img-2.png', 'img-3.png', 'img-4.png', 'img-5.png']
+---
+
+<Layout title='Letrero luminoso'>
+    <main class='container py-10 gallery'>
+        <div>
+            <h1 class='text-4xl font-bold text-center mb-10'>
+                Letrero luminoso
+            </h1>
+        </div>
+        <div class='grid grid-cols-1 md:grid-cols-4 gap-10'>
+            {
+                images.map((image) => (
+                    <a href={`/assets/services/letrero-luminoso/${image}`}>
+                        <img
+                            alt='Letrero luminoso'
+                            src={`/assets/services/letrero-luminoso/${image}`}
+                        />
+                    </a>
+                ))
+            }
+        </div>
+    </main>
+</Layout>
