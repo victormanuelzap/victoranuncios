@@ -1,10 +1,12 @@
 ---
+const BASE_URL = import.meta.env.BASE_URL;
+
 const items = [
   // Si luego creas /servicios/gigantografias, cambia el href
   { icon: "bx bxs-image", title: "Gigantografías", desc: "Lona 13/18 oz, microperforado, vinil + laminado UV.", href: "#contacto" },
 
-  // Apunta a una de tus páginas reales
-  { icon: "bx bxs-bulb", title: "Letreros 3D / Luminosos", desc: "Acrílico, MDF, PVC y luminarias LED.", href: "/servicios/letrero-luminoso" },
+  // ✅ Probando esta página real
+  { icon: "bx bxs-bulb", title: "Letreros 3D / Luminosos", desc: "Acrílico, MDF, PVC y luminarias LED.", href: `${BASE_URL}servicios/letrero-luminoso` },
 
   // Si luego creas /servicios/corte-laser, cámbialo aquí
   { icon: "bx bxs-cut", title: "Corte Láser / Router", desc: "Precisión para letras y paneles.", href: "#contacto" },
@@ -12,8 +14,8 @@ const items = [
   // Si luego creas /servicios/vinil-decoracion, cámbialo aquí
   { icon: "bx bxs-paint", title: "Vinil y Decoración", desc: "Rotulado de vehículos, paredes y vidrios.", href: "#contacto" },
 
-  // Ya existe: src/pages/servicios/instalacion.astro
-  { icon: "bx bxs-wrench", title: "Instalación", desc: "Montaje seguro y garantía en toda Arequipa.", href: "/servicios/instalacion" },
+  // ✅ Página real ya existente
+  { icon: "bx bxs-wrench", title: "Instalación", desc: "Montaje seguro y garantía en toda Arequipa.", href: `${BASE_URL}servicios/instalacion` },
 ];
 ---
 
@@ -33,7 +35,7 @@ const items = [
           <h3 class="mt-3 text-xl font-bold">{it.title}</h3>
           <p class="mt-1 text-gray-600">{it.desc}</p>
           <a href={it.href} class="mt-4 inline-block text-blue-600 font-semibold hover:underline">
-            {it.href.startsWith('/servicios/') ? 'Ver más →' : 'Cotizar →'}
+            {it.href.includes('servicios/') ? 'Ver más →' : 'Cotizar →'}
           </a>
         </div>
       ))}
