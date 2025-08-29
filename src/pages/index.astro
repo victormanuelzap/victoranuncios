@@ -90,7 +90,8 @@ import Hero from '../components/hero.astro'
             <div
                 class='grid grid-cols-1 md:grid-cols-3 gap-10 min-[1800px]:gap-28'
             >
-                <a href='/servicios/letrero-luminoso'>
+                <a href={`${import.meta.env.BASE_URL}servicios/letrero-luminoso`}>
+
                     <Card
                         title1='Letreros'
                         title2='luminosos'
@@ -98,7 +99,7 @@ import Hero from '../components/hero.astro'
                         variant='blue'
                     />
                 </a>
-                <a href='/servicios/3d'>
+                <a href={`${import.meta.env.BASE_URL}servicios/3d`}>
                     <Card
                         title1='3D'
                         title2='Letreros'
