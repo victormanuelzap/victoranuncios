@@ -16,7 +16,7 @@ const BASE_URL = import.meta.env.BASE_URL;
     <meta name="description" content="Victor Anuncios en Arequipa. Letreros luminosos, letreros 3D, gigantografías, vinilos, stickers, tarjetas y publicidad con instalación profesional." />
     <meta name="keywords" content="letreros Arequipa, letreros luminosos Arequipa, gigantografías Arequipa, letreros 3D, vinilos publicitarios, Victor Anuncios" />
 
-    <!-- Redes sociales -->
+    <!-- Open Graph -->
     <meta property="og:title" content="Victor Anuncios - Letreros y Publicidad en Arequipa" />
     <meta property="og:description" content="Expertos en letreros luminosos, gigantografías y diseño gráfico en Arequipa. Instalación rápida y profesional." />
     <meta property="og:image" content={`${BASE_URL}assets/banners/banner-1.jpg`} />
@@ -43,8 +43,8 @@ const BASE_URL = import.meta.env.BASE_URL;
     <!-- ======= HEADER (desktop) ======= -->
     <div class="hidden md:block sticky top-0 z-50 bg-primary">
       <div class="max-w-7xl mx-auto h-24 px-4 md:px-8 lg:px-16 flex items-center">
-        <!-- LOGO a la izquierda -->
-        <a href={`${BASE_URL}`} class="flex items-center gap-2 md:mr-8">
+        <!-- LOGO a la izquierda (espacio reducido md:mr-4) -->
+        <a href={`${BASE_URL}`} class="flex items-center gap-2 md:mr-4">
           <img src={`${BASE_URL}logo.png`} class="h-16 w-auto" alt="Victor Anuncios" />
           <span class="font-bold text-white text-2xl drop-shadow-md">VICTOR ANUNCIOS</span>
         </a>
@@ -65,9 +65,10 @@ const BASE_URL = import.meta.env.BASE_URL;
     <nav class="bg-primary text-white sticky top-0 w-full z-50 md:hidden">
       <div class="container mx-auto px-4">
         <div class="flex items-center justify-between h-16">
-          <a href={`${BASE_URL}`} class="flex items-center gap-2">
+          <a href={`${BASE_URL}`} class="flex items-center gap-2" aria-label="Victor Anuncios">
             <img src={`${BASE_URL}logo.png`} class="h-10 w-auto" alt="Victor Anuncios" />
-            <span class="font-bold text-white text-xl drop-shadow-md">VICTOR ANUNCIOS</span>
+            <!-- oculto el texto en móvil, mantengo accesibilidad -->
+            <span class="sr-only">VICTOR ANUNCIOS</span>
           </a>
           <button id="menu-toggle" class="text-white focus:outline-none" aria-label="Abrir menú">
             <svg class="h-6 w-6 fill-current" viewBox="0 0 24 24"><path d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"/></svg>
