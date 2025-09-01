@@ -58,7 +58,26 @@ const BASE_URL = import.meta.env.BASE_URL;
     <nav class='flex gap-6 text-white font-[500]'>
       <a href={`${import.meta.env.BASE_URL}`}>INICIO</a>
 <a href={`${import.meta.env.BASE_URL}#productos`}>PRODUCTOS</a>
-<a href={`${import.meta.env.BASE_URL}#tienda`}>TIENDA</a>
+<a href={`${import.meta.env<!-- ======= HEADER (desktop) ======= -->
+<div class="hidden md:block sticky top-0 z-50 bg-primary">
+  <div class="max-w-7xl mx-auto h-24 px-4 md:px-8 lg:px-16 flex items-center">
+    <!-- LOGO a la izquierda -->
+    <a href={`${BASE_URL}`} class="flex items-center gap-2 md:mr-8">
+      <img src={`${BASE_URL}logo.png`} class="h-16 w-auto" alt="Victor Anuncios" />
+      <span class="font-bold text-white text-2xl drop-shadow-md">VICTOR ANUNCIOS</span>
+    </a>
+
+    <!-- NAV a la derecha -->
+    <nav class="ml-auto flex gap-6 text-white font-[500]">
+      <a href={`${BASE_URL}`}>INICIO</a>
+      <a href={`${BASE_URL}#productos`}>PRODUCTOS</a>
+      <a href={`${BASE_URL}#tienda`}>TIENDA</a>
+      <a href={`${BASE_URL}#servicios`}>SERVICIOS</a>
+      <a href={`${BASE_URL}#cursos`}>CURSOS</a>
+      <a href={`${BASE_URL}contacto`}>CONTACTO</a>
+    </nav>
+  </div>
+</div>.BASE_URL}#tienda`}>TIENDA</a>
 <a href={`${import.meta.env.BASE_URL}#servicios`}>SERVICIOS</a>
 <a href={`${import.meta.env.BASE_URL}#cursos`}>CURSOS</a>
 <a href={`${import.meta.env.BASE_URL}contacto`}>CONTACTO</a>
