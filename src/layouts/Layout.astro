@@ -4,7 +4,6 @@ const { title } = Astro.props
 import '../css/base.css'
 const BASE_URL = import.meta.env.BASE_URL;
 ---
- 
 
 <!doctype html>
 <html lang="es">
@@ -20,162 +19,138 @@ const BASE_URL = import.meta.env.BASE_URL;
     <!-- Redes sociales -->
     <meta property="og:title" content="Victor Anuncios - Letreros y Publicidad en Arequipa" />
     <meta property="og:description" content="Expertos en letreros luminosos, gigantografías y diseño gráfico en Arequipa. Instalación rápida y profesional." />
-
-
-<meta property="og:image" content={`${BASE_URL}assets/banners/banner-1.jpg`} />
-
+    <meta property="og:image" content={`${BASE_URL}assets/banners/banner-1.jpg`} />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://victoranuncios.com/" />
 
-<!-- Iconos -->
-<link rel="icon" type="image/png" href={`${BASE_URL}favicon.png`} sizes="64x64" />
-<link rel="apple-touch-icon" href={`${BASE_URL}favicon.png`} />
-
+    <!-- Iconos -->
+    <link rel="icon" type="image/png" href={`${BASE_URL}favicon.png`} sizes="64x64" />
+    <link rel="apple-touch-icon" href={`${BASE_URL}favicon.png`} />
 
     <!-- Fuentes -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 
-    <!-- Iconos Boxicons -->
+    <!-- Boxicons -->
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
 
     <!-- Splide slider -->
     <link href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css" rel="stylesheet" />
   </head>
   <body>
-  <!-- ======= HEADER (desktop) ======= -->
-<div class='hidden md:block h-24 bg-primary sticky top-0 z-50'>
-  <div class='container h-full flex items-center justify-between px-4 md:px-8 lg:px-16'>
-    <!-- Logo + texto en PC -->
- <a href={`${import.meta.env.BASE_URL}`} class='flex items-center gap-2'>
 
-<a href='/' class='flex items-center gap-2'>   <!-- móvil -->
-<img src={`${import.meta.env.BASE_URL}logo.png`} class="h-16" alt="Victor Anuncios" />
-      <span class="font-bold text-white text-2xl drop-shadow-md">VICTOR ANUNCIOS</span>
-    </a>
-    <!-- Navegación -->
-    <nav class='flex gap-6 text-white font-[500]'>
-      <a href={`${import.meta.env.BASE_URL}`}>INICIO</a>
-<a href={`${import.meta.env.BASE_URL}#productos`}>PRODUCTOS</a>
-<a href={`${import.meta.env<!-- ======= HEADER (desktop) ======= -->
-<div class="hidden md:block sticky top-0 z-50 bg-primary">
-  <div class="max-w-7xl mx-auto h-24 px-4 md:px-8 lg:px-16 flex items-center">
-    <!-- LOGO a la izquierda -->
-    <a href={`${BASE_URL}`} class="flex items-center gap-2 md:mr-8">
-      <img src={`${BASE_URL}logo.png`} class="h-16 w-auto" alt="Victor Anuncios" />
-      <span class="font-bold text-white text-2xl drop-shadow-md">VICTOR ANUNCIOS</span>
-    </a>
+    <!-- ======= HEADER (desktop) ======= -->
+    <div class="hidden md:block sticky top-0 z-50 bg-primary">
+      <div class="max-w-7xl mx-auto h-24 px-4 md:px-8 lg:px-16 flex items-center">
+        <!-- LOGO a la izquierda -->
+        <a href={`${BASE_URL}`} class="flex items-center gap-2 md:mr-8">
+          <img src={`${BASE_URL}logo.png`} class="h-16 w-auto" alt="Victor Anuncios" />
+          <span class="font-bold text-white text-2xl drop-shadow-md">VICTOR ANUNCIOS</span>
+        </a>
 
-    <!-- NAV a la derecha -->
-    <nav class="ml-auto flex gap-6 text-white font-[500]">
-      <a href={`${BASE_URL}`}>INICIO</a>
-      <a href={`${BASE_URL}#productos`}>PRODUCTOS</a>
-      <a href={`${BASE_URL}#tienda`}>TIENDA</a>
-      <a href={`${BASE_URL}#servicios`}>SERVICIOS</a>
-      <a href={`${BASE_URL}#cursos`}>CURSOS</a>
-      <a href={`${BASE_URL}contacto`}>CONTACTO</a>
-    </nav>
-  </div>
-</div>.BASE_URL}#tienda`}>TIENDA</a>
-<a href={`${import.meta.env.BASE_URL}#servicios`}>SERVICIOS</a>
-<a href={`${import.meta.env.BASE_URL}#cursos`}>CURSOS</a>
-<a href={`${import.meta.env.BASE_URL}contacto`}>CONTACTO</a>
-    </nav>
-  </div>
-</div>
+        <!-- NAV a la derecha -->
+        <nav class="ml-auto flex gap-6 text-white font-[500]">
+          <a href={`${BASE_URL}`}>INICIO</a>
+          <a href={`${BASE_URL}#productos`}>PRODUCTOS</a>
+          <a href={`${BASE_URL}#tienda`}>TIENDA</a>
+          <a href={`${BASE_URL}#servicios`}>SERVICIOS</a>
+          <a href={`${BASE_URL}#cursos`}>CURSOS</a>
+          <a href={`${BASE_URL}contacto`}>CONTACTO</a>
+        </nav>
+      </div>
+    </div>
 
     <!-- ======= HEADER (móvil) ======= -->
-    <nav class='bg-primary text-white sticky top-0 w-full z-50 md:hidden'>
-      <div class='container mx-auto px-4'>
-        <div class='flex items-center justify-between h-16'>
-          <a href='/' class='flex items-center gap-2'>
-<img src={`${BASE_URL}logo.png`} class='h-10 w-auto' alt='Victor Anuncios' />
+    <nav class="bg-primary text-white sticky top-0 w-full z-50 md:hidden">
+      <div class="container mx-auto px-4">
+        <div class="flex items-center justify-between h-16">
+          <a href={`${BASE_URL}`} class="flex items-center gap-2">
+            <img src={`${BASE_URL}logo.png`} class="h-10 w-auto" alt="Victor Anuncios" />
             <span class="font-bold text-white text-xl drop-shadow-md">VICTOR ANUNCIOS</span>
           </a>
-          <button id='menu-toggle' class='text-white focus:outline-none' aria-label="Abrir menú">
-            <svg class='h-6 w-6 fill-current' viewBox='0 0 24 24'><path d='M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z'/></svg>
+          <button id="menu-toggle" class="text-white focus:outline-none" aria-label="Abrir menú">
+            <svg class="h-6 w-6 fill-current" viewBox="0 0 24 24"><path d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"/></svg>
           </button>
         </div>
       </div>
     </nav>
 
-   <!-- Menú móvil desplegable -->
-<div id='menu' class='hidden md:hidden bg-primary text-white fixed top-0 w-full z-40 pt-20 h-screen'>
-  <div class='container mx-auto px-4'>
-    <div class='flex flex-col gap-4 py-4 text-lg'>
-      <a href={`${BASE_URL}`}>Inicio</a><hr class='divider' />
-      <a href={`${BASE_URL}#productos`}>Productos</a><hr class='divider' />
-      <a href={`${BASE_URL}#tienda`}>Tienda</a><hr class='divider' />
-      <a href={`${BASE_URL}#servicios`}>Servicios</a><hr class='divider' />
-      <a href={`${BASE_URL}#cursos`}>Cursos</a><hr class='divider' />
-      <a href={`${BASE_URL}contacto`}>Contacto</a>
+    <!-- Menú móvil -->
+    <div id="menu" class="hidden md:hidden bg-primary text-white fixed top-0 w-full z-40 pt-20 h-screen">
+      <div class="container mx-auto px-4">
+        <div class="flex flex-col gap-4 py-4 text-lg">
+          <a href={`${BASE_URL}`}>Inicio</a><hr class="divider" />
+          <a href={`${BASE_URL}#productos`}>Productos</a><hr class="divider" />
+          <a href={`${BASE_URL}#tienda`}>Tienda</a><hr class="divider" />
+          <a href={`${BASE_URL}#servicios`}>Servicios</a><hr class="divider" />
+          <a href={`${BASE_URL}#cursos`}>Cursos</a><hr class="divider" />
+          <a href={`${BASE_URL}contacto`}>Contacto</a>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
-
 
     <!-- ======= CONTENIDO DE CADA PÁGINA ======= -->
     <slot />
 
     <!-- ======= FOOTER ======= -->
-    <footer class='bg-blue-700 py-10 mt-20'>
-      <div class='pb-10'>
-        <div class='flex gap-4 justify-center items-center'>
-         <img src={`${BASE_URL}logo.png`} class='w-20' alt='logo' />
-          <div class='text-white font-bold text-2xl'>Victor Anuncios</div>
+    <footer class="bg-blue-700 py-10 mt-20">
+      <div class="pb-10">
+        <div class="flex gap-4 justify-center items-center">
+          <img src={`${BASE_URL}logo.png`} class="w-20" alt="logo" />
+          <div class="text-white font-bold text-2xl">Victor Anuncios</div>
         </div>
-        <p class='text-center px-4 text-white pt-3'>
+        <p class="text-center px-4 text-white pt-3">
           Tarjetas de presentación, Letreros 3D, Cortes Láser, Gigantografías, Volantes, Imantados y Afiches.
         </p>
       </div>
-      <div class='container'>
-        <div class='grid md:grid-cols-3 gap-10 md:gap-20'>
-          <div class='space-y-5'>
+      <div class="container">
+        <div class="grid md:grid-cols-3 gap-10 md:gap-20">
+          <div class="space-y-5">
             <div>
-              <h2 class='font-[500] text-white'>Productos</h2>
-              <div class='h-[1px] bg-white w-full mb-2'></div>
-              <div class='text-gray-300 font-light'>Banners</div>
-              <div class='text-gray-300 font-light'>Marcos y Estructuras</div>
-              <div class='text-gray-300 font-light'>Letreros 3D</div>
+              <h2 class="font-[500] text-white">Productos</h2>
+              <div class="h-[1px] bg-white w-full mb-2"></div>
+              <div class="text-gray-300 font-light">Banners</div>
+              <div class="text-gray-300 font-light">Marcos y Estructuras</div>
+              <div class="text-gray-300 font-light">Letreros 3D</div>
             </div>
             <div>
-              <h2 class='font-[500] text-white'>Servicios</h2>
-              <div class='h-[1px] bg-white w-full mb-2'></div>
-              <div class='text-gray-300 font-light'>Marketing Digital</div>
-              <div class='text-gray-300 font-light'>Instalación</div>
-              <div class='text-gray-300 font-light'>Técnico / formateo</div>
+              <h2 class="font-[500] text-white">Servicios</h2>
+              <div class="h-[1px] bg-white w-full mb-2"></div>
+              <div class="text-gray-300 font-light">Marketing Digital</div>
+              <div class="text-gray-300 font-light">Instalación</div>
+              <div class="text-gray-300 font-light">Técnico / formateo</div>
             </div>
           </div>
           <div>
-            <h2 class='font-[500] text-white'>Enlace</h2>
-            <div class='h-[1px] bg-white w-full mb-2'></div>
-            <div class='text-gray-300 font-light'>Productos</div>
-            <div class='text-gray-300 font-light'>Tienda</div>
-            <div class='text-gray-300 font-light'>Servicios</div>
-            <div class='text-gray-300 font-light'>Cursos</div>
-            <div class='text-gray-300 font-light'>Contacto</div>
+            <h2 class="font-[500] text-white">Enlace</h2>
+            <div class="h-[1px] bg-white w-full mb-2"></div>
+            <div class="text-gray-300 font-light">Productos</div>
+            <div class="text-gray-300 font-light">Tienda</div>
+            <div class="text-gray-300 font-light">Servicios</div>
+            <div class="text-gray-300 font-light">Cursos</div>
+            <div class="text-gray-300 font-light">Contacto</div>
           </div>
-          <div class='space-y-5'>
-            <h2 class='font-[500] text-white'>Contactos</h2>
-            <div class='h-[1px] bg-white w-full mb-2'></div>
-            <div class='text-gray-300 font-light'>+51 946182531</div>
-            <div class='text-gray-300 font-light'>@victoranuncios</div>
-            <div class='text-gray-300 font-light'>Av. Ramón Castilla 1004, Cayma</div>
+          <div class="space-y-5">
+            <h2 class="font-[500] text-white">Contactos</h2>
+            <div class="h-[1px] bg-white w-full mb-2"></div>
+            <div class="text-gray-300 font-light">+51 946182531</div>
+            <div class="text-gray-300 font-light">@victoranuncios</div>
+            <div class="text-gray-300 font-light">Av. Ramón Castilla 1004, Cayma</div>
             <div>
-              <h2 class='font-[500] text-white mt-6'>Redes Sociales</h2>
-              <div class='h-[1px] bg-white w-full mb-2'></div>
-              <div class='text-white flex gap-4 mt-2 text-2xl'>
-                <a href='https://www.instagram.com/' target='_blank'><i class='bx bxl-instagram'></i></a>
-                <a href='https://www.facebook.com/VictorAnuncioss' target='_blank'><i class='bx bxl-facebook'></i></a>
-                <a href='https://wa.me/51946182531' target='_blank'><i class='bx bxl-whatsapp'></i></a>
-                <a href='https://www.tiktok.com/@victor.anuncios' target='_blank'><i class='bx bxl-tiktok'></i></a>
+              <h2 class="font-[500] text-white mt-6">Redes Sociales</h2>
+              <div class="h-[1px] bg-white w-full mb-2"></div>
+              <div class="text-white flex gap-4 mt-2 text-2xl">
+                <a href="https://www.instagram.com/" target="_blank"><i class="bx bxl-instagram"></i></a>
+                <a href="https://www.facebook.com/VictorAnuncioss" target="_blank"><i class="bx bxl-facebook"></i></a>
+                <a href="https://wa.me/51946182531" target="_blank"><i class="bx bxl-whatsapp"></i></a>
+                <a href="https://www.tiktok.com/@victor.anuncios" target="_blank"><i class="bx bxl-tiktok"></i></a>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div class='text-center bg-[#011efe] text-gray-200 text-sm py-4 mt-8'>
+      <div class="text-center bg-[#011efe] text-gray-200 text-sm py-4 mt-8">
         © 2024 Copyright: Victor anuncios
       </div>
     </footer>
