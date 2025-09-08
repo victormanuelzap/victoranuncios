@@ -63,4 +63,43 @@ const products = [
     title_2: 'Proforma',
     image: `${BASE_URL}assets/images/formateria-5.png`,
     whatsapp: w('Hola, quiero pedir una Proforma'),
-    feat
+    features: [
+      { name: 'Material',  value: 'Papel químico autocopiativo' },
+      { name: 'Medidas',   value: '1/4 de oficio (10 x 14 cm)' },
+      { name: 'Impresión', value: '1 color · Original + 1 copia' },
+      { name: 'Acabado',   value: 'Numerado, pegado, forrado' },
+      { name: 'Cantidad',  value: '1000 unidades' },
+    ],
+  },
+  {
+    title: 'Aut. por SUNAT',
+    title_2: 'Transportista',
+    image: `${BASE_URL}assets/images/formateria-6.png`,
+    whatsapp: w('Hola, quiero pedir un talonario de Transportista'),
+    features: [
+      { name: 'Material',  value: 'Papel químico autocopiativo' },
+      { name: 'Medidas',   value: '1/4 de oficio (10 x 14 cm)' },
+      { name: 'Impresión', value: '1 color · Original + 3 copias' },
+      { name: 'Acabado',   value: 'Numerado, pegado, forrado' },
+      { name: 'Cantidad',  value: '1000 unidades' },
+    ],
+  },
+]
+---
+
+<Layout title='Formatería en Arequipa - Victor Anuncios'>
+  <section class='relative'>
+    <img
+      src={`${BASE_URL}assets/images/brochure-page.jpg`}
+      alt='Formatería'
+      class='h-80 w-full object-cover'
+      loading="lazy"
+    />
+    <div class='absolute top-0 left-0 w-full h-full bg-black/50 flex justify-center items-center'>
+      <h1 class='text-white text-4xl md:text-6xl font-bold uppercase text-center'>
+        FORMATERÍA
+      </h1>
+    </div>
+  </section>
+
+  <div class='max-w-7xl mx-auto px-4 md:px-8 lg:px-16 py-10'
