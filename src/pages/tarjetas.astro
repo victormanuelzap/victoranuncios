@@ -3,7 +3,9 @@ import Layout from '../layouts/Layout.astro'
 
 const BASE_URL = import.meta.env.BASE_URL
 const number = '51946182531'
-const w = (t) => `https://wa.me/${number}?text=${encodeURIComponent(t)}`
+
+// 👇 aquí agregué el tipo string en el parámetro
+const w = (t: string) => `https://wa.me/${number}?text=${encodeURIComponent(t)}`
 
 const products = [
   {
