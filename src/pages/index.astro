@@ -179,33 +179,31 @@ import Hero from '../components/hero.astro'
     </div>
     <!-- ===== /GRID SERVICIOS ===== -->
   </div>
-
-<!-- Carga de Splide, en modo inline para que no lo procese como módulo -->
+<!-- SPLIDE JS (evita que Astro/TS lo procese) -->
 <script
-  src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"
-  defer
   is:inline
+  src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"
 ></script>
 
 <script is:inline>
-  // Evita errores si el DOM aún no está listo
   document.addEventListener('DOMContentLoaded', function () {
     try {
-      var s1 = document.querySelector('.splide');
-      if (s1 && window.Splide) {
-        var slide1 = new Splide('.splide', { type: 'loop', autoplay: true, rewind: true });
-        slide1.mount();
-      }
+      if (typeof window !== 'undefined' && window.Splide) {
+        var el1 = document.querySelector('.splide');
+        if (el1) {
+          new window.Splide(el1, { type: 'loop', autoplay: true, rewind: true }).mount();
+        }
 
-      var s2 = document.querySelector('.splide2');
-      if (s2 && window.Splide) {
-        var slide2 = new Splide('.splide2', { type: 'loop', autoplay: true, rewind: true });
-        slide2.mount();
+        var el2 = document.querySelector('.splide2');
+        if (el2) {
+          new window.Splide(el2, { type: 'loop', autoplay: true, rewind: true }).mount();
+        }
       }
     } catch (e) {
       console.warn('Splide init skipped:', e);
     }
   });
 </script>
+
 
 </Layout>
