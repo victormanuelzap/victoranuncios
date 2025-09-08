@@ -96,6 +96,7 @@ const products = [
       src={`${BASE_URL}assets/images/tarjetas-personales.jpg`}
       alt='Tarjetas personales'
       class='h-80 w-full object-cover'
+      loading="lazy"
     />
     <div class='absolute top-0 left-0 w-full h-full bg-black/50 flex justify-center items-center'>
       <h1 class='text-white text-4xl md:text-6xl font-bold uppercase text-center'>
@@ -108,12 +109,13 @@ const products = [
     <div class='grid gap-10 md:grid-cols-3'>
       {
         products.map((product) => (
-          <div class='bg-white rounded-2xl shadow p-4'>
+          <div class='bg-white rounded-2xl shadow p-4 group'>
             <div class='relative'>
               <img
                 src={product.image}
                 alt={`${product.title} ${product.title_2}`}
                 class='rounded-2xl transition-all duration-500 group-hover:scale-105 group-hover:rotate-2'
+                loading="lazy"
               />
               <div class='leading-6 text-2xl absolute bottom-5 w-full text-center'>
                 {product.title && (
