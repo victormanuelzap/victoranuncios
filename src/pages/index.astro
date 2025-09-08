@@ -180,11 +180,19 @@ import Hero from '../components/hero.astro'
     <!-- ===== /GRID SERVICIOS ===== -->
   </div>
 
-  <script src='https://cdn.jsdelivr.net/npm/@splidejs/splide@3.1.4/dist/js/splide.min.js' is:raw></script>
-  <script is:raw>
-    const slide1 = new Splide('.splide', { type: 'loop', autoplay: true, rewind: true })
-    const slide2 = new Splide('.splide2', { type: 'loop', autoplay: true, rewind: true })
-    slide1.mount()
-    slide2.mount()
-  </script>
+  <!-- Carga Splide desde CDN -->
+<script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@3.1.4/dist/js/splide.min.js" defer></script>
+
+<!-- Inicializa Splide cuando el DOM esté listo (sin errores de TS) -->
+<script is:inline>
+  window.addEventListener('DOMContentLoaded', function () {
+    if (window.Splide) {
+      var slide1 = new window.Splide('.splide',  { type: 'loop', autoplay: true, rewind: true });
+      var slide2 = new window.Splide('.splide2', { type: 'loop', autoplay: true, rewind: true });
+      slide1.mount();
+      slide2.mount();
+    }
+  });
+</script>
+
 </Layout>
