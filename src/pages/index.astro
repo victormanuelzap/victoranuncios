@@ -24,297 +24,167 @@ import Hero from '../components/hero.astro'
   </section>
   <!-- ===================== /CONTACTO ===================== -->
 
-  <!-- Grilla de servicios (DUPLICADA) -->
-  <!-- <ServicesGrid /> --> <!-- QUITADO -->
-
   <!-- Aquí sigues con tus otras secciones -->
   <div class='bg-blue-700 pb-12 pt-14 flex justify-center' data-aos='fade-right'>
     <!-- contenido de tu sección azul -->
   </div>
 
-
-
-
-    <div
-        class='bg-blue-700 pb-12 pt-14 flex justify-center'
-        data-aos='fade-right'
-    >
-        <div class='max-w-7xl px-4 w-full h-full'>
-            <div class='container h-full w-full flex justify-between items-end'>
-                <div class='text-white uppercase space-y-2'>
-                    <div class='text-2xl lg:text-4xl'>
-                        <span
-                            class='bg-white py-1 px-8 text-blue-700'
-                            style='clip-path: polygon(5% 0%, 100% 0%, 95% 100%, 0% 100%);'
-                            >¿Tienes algún</span
-                        >
-                    </div>
-                    <div class='text-4xl lg:text-6xl font-bold pt-2'>
-                        proyecto <span
-                            class='text-3xl bg-white px-5 text-blue-700'
-                            style='clip-path: polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%);'
-                            >en</span
-                        >
-                    </div>
-                    <div class='text-6xl lg:text-9xl font-bold'>mente?</div>
-                </div>
-                <div class='h-full items-end hidden md:block'>
-                    <button
-                        class='text-5xl border-8 border-white text-white rounded-2xl px-4 py-2 font-semibold uppercase'
-                    >
-                        Contactanos
-                    </button>
-                </div>
-            </div>
+  <div
+    class='bg-blue-700 pb-12 pt-14 flex justify-center'
+    data-aos='fade-right'
+  >
+    <div class='max-w-7xl px-4 w-full h-full'>
+      <div class='container h-full w-full flex justify-between items-end'>
+        <div class='text-white uppercase space-y-2'>
+          <div class='text-2xl lg:text-4xl'>
+            <span
+              class='bg-white py-1 px-8 text-blue-700'
+              style='clip-path: polygon(5% 0%, 100% 0%, 95% 100%, 0% 100%);'
+            >¿Tienes algún</span>
+          </div>
+          <div class='text-4xl lg:text-6xl font-bold pt-2'>
+            proyecto <span
+              class='text-3xl bg-white px-5 text-blue-700'
+              style='clip-path: polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%);'
+            >en</span>
+          </div>
+          <div class='text-6xl lg:text-9xl font-bold'>mente?</div>
         </div>
+        <div class='h-full items-end hidden md:block'>
+          <button
+            class='text-5xl border-8 border-white text-white rounded-2xl px-4 py-2 font-semibold uppercase'
+          >
+            Contactanos
+          </button>
+        </div>
+      </div>
     </div>
-    <div class='max-w-7xl mx-auto px-4 pt-8'>
-        <div class='flex justify-center my-10 md:my-16' id='productos'>
-            <div class='flex flex-col max-md:items-center'>
-                <h2
-                    class='italic uppercase text-5xl md:text-7xl font-extrabold text-center'
-                >
-                    <span class='text-blue-700'>Nuestros</span>
-                    <span
-                        style='-webkit-text-stroke: 1px rgb(29, 78, 216);'
-                        class='text-transparent'>productos</span
-                    >
-                </h2>
-                <div class='flex justify-end'>
-                    <div class='w-56 h-3 bg-blue-700'></div>
-                </div>
-            </div>
-        </div>
+  </div>
 
-        <div class='pt-6'>
-            <div
-                class='grid grid-cols-1 md:grid-cols-3 gap-10 min-[1800px]:gap-28'
-            >
-                <a href={`${import.meta.env.BASE_URL}servicios/letrero-luminoso`}>
-
-                    <Card
-                        title1='Letreros'
-                        title2='luminosos'
-                        image='/assets/images/cards/5-min 1.png'
-                        variant='blue'
-                    />
-                </a>
-                <a href={`${import.meta.env.BASE_URL}servicios/3d`}>
-                    <Card
-                        title1='3D'
-                        title2='Letreros'
-                        image='/assets/images/cards/10-min 1.png'
-                        variant='blue'
-                    />
-                </a>
-                <a href='/tarjetas'>
-                    <Card
-                        title1='Tarjetas de'
-                        title2='presentación'
-                        image='/assets/images/tarjeta-presentacion.jpg'
-                        variant='blue'
-                    />
-                </a>
-                <a href='/volantes'>
-                    <Card
-                        title1='Volantes'
-                        title2='Publicitarios'
-                        image='/assets/images/cards/2-min 1.png'
-                        variant='blue'
-                    />
-                </a>
-                <!-- <a href='/bochure'>
-                    <Card
-                        title1='Bochure'
-                        title2='Publicitarios'
-                        image='/assets/images/cards/3-min 1.png'
-                        variant='blue'
-                    />
-                </a> -->
-                <a href='/formateria'>
-                    <Card
-                        title1='Proformas'
-                        title2='nota de pedido'
-                        image='/assets/images/cards/4-min 1.png'
-                        variant='blue'
-                    />
-                </a>
-                <Card
-                    title1='Stikers'
-                    title2='autoadhesivos'
-                    image='/assets/images/cards/6-min 1.png'
-                    variant='blue'
-                />
-                <Card
-                    title1='Cartas'
-                    title2='personalizadas'
-                    image='/assets/images/cards/7-min 1.png'
-                    variant='blue'
-                />
-                <Card
-                    title1='Almanaques'
-                    title2='publicitarios'
-                    image='/assets/images/cards/8-min 1.png'
-                    variant='blue'
-                />
-                <Card
-                    title1='Merchandise'
-                    title2='general'
-                    image='/assets/images/cards/9-min 1.png'
-                    variant='blue'
-                />
-                <Card
-                    title1='Diseño'
-                    title2='publicitario'
-                    image='/assets/images/cards/11-min 1.png'
-                    variant='blue'
-                />
-            </div>
+  <div class='max-w-7xl mx-auto px-4 pt-8'>
+    <div class='flex justify-center my-10 md:my-16' id='productos'>
+      <div class='flex flex-col max-md:items-center'>
+        <h2 class='italic uppercase text-5xl md:text-7xl font-extrabold text-center'>
+          <span class='text-blue-700'>Nuestros</span>
+          <span style='-webkit-text-stroke: 1px rgb(29, 78, 216);' class='text-transparent'>productos</span>
+        </h2>
+        <div class='flex justify-end'>
+          <div class='w-56 h-3 bg-blue-700'></div>
         </div>
+      </div>
     </div>
 
-    <!-- <div
-        class='bg-primary pb-12 pt-14 mt-20 md:mt-28'
-        id='cursos'
-        data-aos='fade-right'
-    >
-        <div class='container h-full flex justify-between items-end'>
-            <div class='text-white uppercase space-y-2'>
-                <div class='text-2xl md:text-3xl lg:text-4xl'>
-                    <span
-                        class='bg-white py-1 px-8 text-primary'
-                        style='clip-path: polygon(5% 0%, 100% 0%, 95% 100%, 0% 100%);'
-                    >
-                        Cursos
-                    </span>
-                </div>
-                <div class='flex gap-20'>
-                    <div
-                        class='text-2xl md:text-4xl lg:text-6xl font-bold pt-2'
-                    >
-                        especializados <span
-                            class='text-2xl md:text-4xl bg-white px-5 text-primary'
-                            style='clip-path: polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%);'
-                            >que</span
-                        >
-                    </div>
-                    <div class='hidden md:block h-full items-end'>
-                        <button
-                            class='text-white border-white rounded-2xl px-4 py-2 font-semibold uppercase text-2xl lg:text-5xl border-8'
-                        >
-                            Contactanos
-                        </button>
-                    </div>
-                </div>
-                <div class='text-7xl lg:text-9xl font-bold'>
-                    tenemos para ti
-                </div>
-            </div>
-        </div>
-    </div> -->
+    <!-- ===== GRID PRODUCTOS ===== -->
+    <div class='pt-6'>
+      <div class='grid grid-cols-1 md:grid-cols-3 gap-10 min-[1800px]:gap-28'>
+        <!-- Letreros luminosos -->
+        <a href={`${import.meta.env.BASE_URL}servicios/letrero-luminoso`}>
+          <Card
+            title1='Letreros'
+            title2='luminosos'
+            image='/assets/images/cards/5-min%201.png'
+            variant='blue'
+          />
+        </a>
 
-    <div class='container pt-8'>
-        <!-- <div class='flex justify-center my-10 md:my-16'>
-            <div class='flex flex-col max-md:items-center'>
-                <h2
-                    class='italic uppercase text-5xl md:text-8xl font-extrabold text-center'
-                >
-                    <span class='text-primary'>Nuestros</span>
-                    <span
-                        style='-webkit-text-stroke: 1px red;'
-                        class='text-transparent'>cursos</span
-                    >
-                </h2>
-                <div class='flex justify-end'>
-                    <div class='w-40 md:w-80 h-2 bg-primary'></div>
-                </div>
-            </div>
-        </div>
+        <!-- Letreros 3D -->
+        <a href={`${import.meta.env.BASE_URL}servicios/3d`}>
+          <Card
+            title1='3D'
+            title2='Letreros'
+            image='/assets/images/cards/10-min%201.png'
+            variant='blue'
+          />
+        </a>
 
-        <div class='pt-6'>
-            <div class='grid lg:grid-cols-3 gap-10'>
-                <Card
-                    title1='3D'
-                    title2='letreros'
-                    image='/assets/images/tarjeta.png'
-                    variant='red'
-                />
-                <Card
-                    title1='3D'
-                    title2='letreros'
-                    image='/assets/images/tarjeta.png'
-                    variant='red'
-                />
-                <Card
-                    title1='3D'
-                    title2='letreros'
-                    image='/assets/images/tarjeta.png'
-                    variant='red'
-                />
-            </div>
-        </div> -->
+        <!-- Tarjetas de presentación -->
+        <a href={`${import.meta.env.BASE_URL}tarjetas`}>
+          <Card
+            title1='Tarjetas de'
+            title2='presentación'
+            image='/assets/images/tarjeta-presentacion.jpg'
+            variant='blue'
+          />
+        </a>
 
-        <div class='flex justify-center my-10 md:my-16' id='servicios'>
-            <div class='mt-10 flex flex-col max-md:items-center'>
-                <h2
-                    class='italic uppercase text-5xl md:text-8xl font-extrabold text-center'
-                >
-                    <span class='text-blue-700'>Nuestros</span>
-                    <span
-                        style='-webkit-text-stroke: 1px rgb(29, 78, 216);'
-                        class='text-transparent'>servicios</span
-                    >
-                </h2>
-                <div class='flex justify-end'>
-                    <div class='w-40 md:w-80 h-2 bg-blue-700'></div>
-                </div>
-            </div>
-        </div>
+        <!-- Volantes publicitarios -->
+        <a href={`${import.meta.env.BASE_URL}volantes`}>
+          <Card
+            title1='Volantes'
+            title2='Publicitarios'
+            image='/assets/images/cards/2-min%201.png'
+            variant='blue'
+          />
+        </a>
 
-        <div class='pt-6'>
-            <div class='grid grid-cols md:grid-cols-3 gap-10'>
-                <a href='/servicios/instalacion'>
-                    <Card
-                        title1='Instalaciones'
-                        title2='general'
-                        image='/assets/images/cards/12-min 1.png'
-                        variant='red'
-                    />
-                </a>
-                <Card
-                    title1='Soldadura'
-                    title2=''
-                    image='/assets/images/tarjeta.png'
-                    variant='red'
-                />
-                <Card
-                    top1='Marketing'
-                    top2='Digital'
-                    title1='Asistencia y'
-                    title2='asesoramiento'
-                    image='/assets/images/tarjeta.png'
-                    variant='red'
-                />
-            </div>
+        <!-- Proformas / Nota de pedido (tu página es formateria.astro) -->
+        <a href={`${import.meta.env.BASE_URL}formateria`}>
+          <Card
+            title1='Proformas'
+            title2='nota de pedido'
+            image='/assets/images/cards/4-min%201.png'
+            variant='blue'
+          />
+        </a>
+
+        <!-- Los demás por ahora sin enlace -->
+        <Card title1='Stikers'      title2='autoadhesivos'  image='/assets/images/cards/6-min%201.png' variant='blue' />
+        <Card title1='Cartas'       title2='personalizadas' image='/assets/images/cards/7-min%201.png' variant='blue' />
+        <Card title1='Almanaques'   title2='publicitarios'  image='/assets/images/cards/8-min%201.png' variant='blue' />
+        <Card title1='Merchandise'  title2='general'        image='/assets/images/cards/9-min%201.png' variant='blue' />
+        <Card title1='Diseño'       title2='publicitario'   image='/assets/images/cards/11-min%201.png' variant='blue' />
+      </div>
+    </div>
+    <!-- ===== /GRID PRODUCTOS ===== -->
+
+    <!-- ===== Título SERVICIOS ===== -->
+    <div class='flex justify-center my-10 md:my-16' id='servicios'>
+      <div class='mt-10 flex flex-col max-md:items-center'>
+        <h2 class='italic uppercase text-5xl md:text-8xl font-extrabold text-center'>
+          <span class='text-blue-700'>Nuestros</span>
+          <span style='-webkit-text-stroke: 1px rgb(29, 78, 216);' class='text-transparent'>servicios</span>
+        </h2>
+        <div class='flex justify-end'>
+          <div class='w-40 md:w-80 h-2 bg-blue-700'></div>
         </div>
+      </div>
     </div>
 
-    <script
-        src='https://cdn.jsdelivr.net/npm/@splidejs/splide@3.1.4/dist/js/splide.min.js'
-        is:raw></script>
-    <script is:raw>
-        const slide1 = new Splide('.splide', {
-            type: 'loop',
-            autoplay: true,
-            rewind: true,
-        })
-        const slide2 = new Splide('.splide2', {
-            type: 'loop',
-            autoplay: true,
-            rewind: true,
-        })
+    <!-- ===== GRID SERVICIOS ===== -->
+    <div class='pt-6'>
+      <div class='grid grid-cols-1 md:grid-cols-3 gap-10'>
+        <a href={`${import.meta.env.BASE_URL}servicios/instalacion`}>
+          <Card
+            title1='Instalaciones'
+            title2='general'
+            image='/assets/images/cards/12-min%201.png'
+            variant='red'
+          />
+        </a>
+        <Card
+          title1='Soldadura'
+          title2=''
+          image='/assets/images/tarjeta.png'
+          variant='red'
+        />
+        <Card
+          top1='Marketing'
+          top2='Digital'
+          title1='Asistencia y'
+          title2='asesoramiento'
+          image='/assets/images/tarjeta.png'
+          variant='red'
+        />
+      </div>
+    </div>
+    <!-- ===== /GRID SERVICIOS ===== -->
+  </div>
 
-        slide1.mount()
-        slide2.mount()
-    </script>
+  <script src='https://cdn.jsdelivr.net/npm/@splidejs/splide@3.1.4/dist/js/splide.min.js' is:raw></script>
+  <script is:raw>
+    const slide1 = new Splide('.splide', { type: 'loop', autoplay: true, rewind: true })
+    const slide2 = new Splide('.splide2', { type: 'loop', autoplay: true, rewind: true })
+    slide1.mount()
+    slide2.mount()
+  </script>
 </Layout>
