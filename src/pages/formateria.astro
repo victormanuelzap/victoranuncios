@@ -92,18 +92,19 @@ const products = [
 <Layout title='Formatería en Arequipa - Victor Anuncios'>
   <!-- Hero igual al de “tarjetas”, cambia solo la imagen -->
   <section class='relative'>
-    <img
-      src={`${BASE_URL}assets/images/brochure-page.jpg`}
-      alt='Formatería'
-      class='h-80 w-full object-cover'
-      loading="lazy"
-    />
-    <div class='absolute top-0 left-0 w-full h-full bg-black/50 flex justify-center items-center'>
-      <h1 class='text-white text-4xl md:text-6xl font-bold uppercase text-center'>
-        FORMATERÍA
-      </h1>
-    </div>
-  </section>
+  <img
+    src={`${BASE_URL}assets/images/brochure-page.jpg`}
+    alt='Formatería'
+    class='h-80 w-full object-cover'
+    loading="eager"
+  />
+  <div class='absolute top-0 left-0 w-full h-full bg-black/50 flex justify-center items-center'>
+    <h1 class='text-white text-4xl md:text-6xl font-bold uppercase text-center'>
+      FORMATERÍA
+    </h1>
+  </div>
+</section>
+
 
   <div class='max-w-7xl mx-auto px-4 md:px-8 lg:px-16 py-10'>
     <div class='grid gap-10 md:grid-cols-3'>
