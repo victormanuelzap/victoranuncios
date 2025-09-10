@@ -1,5 +1,4 @@
 ---
-/* @ts-nocheck */
 import Layout from '../layouts/Layout.astro'
 
 const BASE_URL = import.meta.env.BASE_URL
@@ -13,11 +12,11 @@ const products = [
     image: `${BASE_URL}assets/images/formateria-1.png`,
     whatsapp: w('Hola, quiero pedir una Boleta de venta'),
     features: [
-      { name: 'Material',  value: 'Papel Químico Autocopiativo' },
-      { name: 'Medidas',   value: '1/4 de oficio 10x14 cm' },
-      { name: 'Impresión', value: '1 color Original + 1 copia' },
-      { name: 'Acabado',   value: 'Numerado, Pegado, Forrado' },
-      { name: 'Cantidad',  value: '1000 Unidades' },
+      { name: 'Material',  value: 'Papel químico autocopiativo' },
+      { name: 'Medidas',   value: '1/4 de oficio (10 x 14 cm)' },
+      { name: 'Impresión', value: '1 color · Original + 1 copia' },
+      { name: 'Acabado',   value: 'Numerado, pegado, forrado' },
+      { name: 'Cantidad',  value: '1000 unidades' },
     ],
   },
   {
@@ -26,124 +25,26 @@ const products = [
     image: `${BASE_URL}assets/images/formateria-2.png`,
     whatsapp: w('Hola, quiero pedir una Factura'),
     features: [
-      { name: 'Material',  value: 'Papel Químico Autocopiativo' },
-      { name: 'Medidas',   value: '1/2 de oficio 16.5x21 cm' },
-      { name: 'Impresión', value: '1 color Original + 3 copias' },
-      { name: 'Acabado',   value: 'Numerado, Pegado, Forrado' },
-      { name: 'Cantidad',  value: '1000 Unidades' },
+      { name: 'Material',  value: 'Papel químico autocopiativo' },
+      { name: 'Medidas',   value: '1/2 de oficio (16.5 x 21 cm)' },
+      { name: 'Impresión', value: '1 color · Original + 3 copias' },
+      { name: 'Acabado',   value: 'Numerado, pegado, forrado' },
+      { name: 'Cantidad',  value: '1000 unidades' },
     ],
   },
   {
     title: 'Aut. por SUNAT',
-    title_2: 'Guías Remisión',
+    title_2: 'Guías de remisión',
     image: `${BASE_URL}assets/images/formateria-3.png`,
-    whatsapp: w('Hola, quiero pedir una Guía de Remisión'),
+    whatsapp: w('Hola, quiero pedir una Guía de remisión'),
     features: [
-      { name: 'Material',  value: 'Papel Químico Autocopiativo' },
-      { name: 'Medidas',   value: '1/2 de oficio 16.5x21 cm' },
-      { name: 'Impresión', value: '1 color Original + 3 copias' },
-      { name: 'Acabado',   value: 'Numerado, Pegado, Forrado' },
-      { name: 'Cantidad',  value: '1000 Unidades' },
+      { name: 'Material',  value: 'Papel químico autocopiativo' },
+      { name: 'Medidas',   value: '1/2 de oficio (16.5 x 21 cm)' },
+      { name: 'Impresión', value: '1 color · Original + 3 copias' },
+      { name: 'Acabado',   value: 'Numerado, pegado, forrado' },
+      { name: 'Cantidad',  value: '1000 unidades' },
     ],
   },
   {
     title: 'Aut. por SUNAT',
-    title_2: 'Nota de venta',
-    image: `${BASE_URL}assets/images/formateria-4.png`,
-    whatsapp: w('Hola, quiero pedir una Nota de venta'),
-    features: [
-      { name: 'Material',  value: 'Papel Químico Autocopiativo' },
-      { name: 'Medidas',   value: '1/4 de oficio 10x14 cm' },
-      { name: 'Impresión', value: '1 color Original + 1 copia' },
-      { name: 'Acabado',   value: 'Numerado, Pegado, Forrado' },
-      { name: 'Cantidad',  value: '1000 Unidades' },
-    ],
-  },
-  {
-    title: 'Aut. por SUNAT',
-    title_2: 'Proforma',
-    image: `${BASE_URL}assets/images/formateria-5.png`,
-    whatsapp: w('Hola, quiero pedir una Proforma'),
-    features: [
-      { name: 'Material',  value: 'Papel Químico Autocopiativo' },
-      { name: 'Medidas',   value: '1/4 de oficio 10x14 cm' },
-      { name: 'Impresión', value: '1 color Original + 1 copia' },
-      { name: 'Acabado',   value: 'Numerado, Pegado, Forrado' },
-      { name: 'Cantidad',  value: '1000 Unidades' },
-    ],
-  },
-  {
-    title: 'Aut. por SUNAT',
-    title_2: 'Transportista',
-    image: `${BASE_URL}assets/images/formateria-6.png`,
-    whatsapp: w('Hola, quiero pedir un formato Transportista'),
-    features: [
-      { name: 'Material',  value: 'Papel Químico Autocopiativo' },
-      { name: 'Medidas',   value: '1/4 de oficio 10x14 cm' },
-      { name: 'Impresión', value: '1 color Original + 1 copia' },
-      { name: 'Acabado',   value: 'Numerado, Pegado, Forrado' },
-      { name: 'Cantidad',  value: '1000 Unidades' },
-    ],
-  },
-]
----
-
-<Layout title="Formatería | Victor Anuncios">
-  <section class="wrap">
-    <h1 class="title">FORMATERÍA</h1>
-
-    <div class="grid">
-      {products.map((p) => (
-        <article class="card">
-          <div class="imgbox">
-            <img src={p.image} alt={p.title_2} width="640" height="480" loading="lazy" />
-          </div>
-
-          <h3 class="t1">{p.title}</h3>
-          <h2 class="t2">{p.title_2}</h2>
-
-          <ul class="feat">
-            {p.features.map((f) => (
-              <li><span>{f.name}:</span> {f.value}</li>
-            ))}
-          </ul>
-
-          <a class="wa" href={p.whatsapp} target="_blank" rel="noopener noreferrer">
-            <svg viewBox="0 0 32 32" width="16" height="16" aria-hidden="true">
-              <path d="M19.11 17.26c-.27-.14-1.6-.79-1.84-.88-.25-.09-.43-.14-.62.14-.18.27-.71.88-.87 1.06-.16.18-.32.2-.59.07-.27-.14-1.13-.42-2.15-1.34-.79-.7-1.33-1.57-1.49-1.84-.16-.27-.02-.41.12-.55.12-.12.27-.32.41-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.62-1.49-.85-2.03-.22-.53-.45-.46-.62-.46-.16 0-.34-.02-.52-.02-.18 0-.48.07-.73.34-.25.27-.96.94-.96 2.29s.98 2.66 1.12 2.85c.14.18 1.93 2.95 4.67 4.13.65.28 1.16.45 1.56.58.65.21 1.24.18 1.71.11.52-.08 1.6-.65 1.83-1.27.23-.62.23-1.16.16-1.27-.07-.11-.25-.18-.52-.32z" fill="currentColor"></path>
-              <path d="M27 16c0 6.08-4.93 11-11 11a10.95 10.95 0 0 1-5.19-1.31L5 27l1.36-5.02A10.95 10.95 0 0 1 5 16C5 9.93 9.93 5 16 5s11 4.93 11 11zm-2 0c0-4.97-4.03-9-9-9s-9 4.03-9 9c0 1.78.53 3.44 1.43 4.83L7 24l3.32-.87A8.99 8.99 0 0 0 25 16z" fill="currentColor"></path>
-            </svg>
-            Pedir por WhatsApp
-          </a>
-        </article>
-      ))}
-    </div>
-  </section>
-
-  <style>
-    :root{
-      --brand:#e53935; /* rojo etiquetas */
-      --text:#1b1b1b;
-      --muted:#5b5b5b;
-      --card:#fff;
-      --btn:#1db954; /* verde WhatsApp */
-      --btnh:#14a244;
-      --bg:#ffffff;
-    }
-    .wrap{max-width:1200px;margin:0 auto;padding:40px 16px;}
-    .title{margin:0 0 20px 0;text-align:center;font-weight:800;letter-spacing:.02em;color:#1e3a8a;}
-    .grid{display:grid;gap:26px;grid-template-columns:repeat(1,minmax(0,1fr))}
-    @media(min-width:768px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
-    @media(min-width:1024px){.grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
-    .card{background:var(--card);border-radius:12px;padding:18px;box-shadow:0 8px 22px rgba(0,0,0,.08)}
-    .imgbox{display:flex;align-items:center;justify-content:center;height:180px}
-    .imgbox img{max-width:100%;max-height:100%;object-fit:contain}
-    .t1{text-transform:uppercase;color:#222;font-size:12px;margin:10px 0 0 0;font-weight:800}
-    .t2{text-transform:uppercase;color:#222;font-size:16px;margin:2px 0 0 0;font-weight:800}
-    .feat{list-style:none;margin:10px 0 0 0;padding:0}
-    .feat li{display:flex;gap:8px;font-size:12px;color:var(--muted);margin:4px 0}
-    .feat li span{color:var(--brand);min-width:78px;font-weight:700}
-    .wa{margin-top:10px;display:flex;align-items:center;gap:8px;justify-content:center;width:100%;padding:8px 12px;border-radius:8px;background:var(--btn);color:#fff;font-weight:700;text-decoration:none}
-    .wa:hover{background:var(--btnh)}
-  </style>
-</Layout>
+    t
