@@ -16,15 +16,21 @@ const {
   variant = 'blue',
 } = Astro.props
 
-const bg =
-  variant === 'red'
-    ? 'bg-red-600'
-    : 'bg-blue-700'
+const BASE_URL = import.meta.env.BASE_URL
+
+// Normaliza la ruta de imagen:
+// - Si viene http(s) la deja tal cual
+// - Si viene con o sin "/" delante, la ajusta con BASE_URL
+const imgSrc = /^https?:\/\//i.test(image)
+  ? image
+  : `${BASE_URL}${image.replace(/^\//, '')}`
+
+const bg = variant === 'red' ? 'bg-red-600' : 'bg-blue-700'
 ---
 <div class={`rounded-[40px] ${bg} p-6 md:p-8 flex flex-col items-center`}>
   <div class="w-full flex justify-center">
     <img
-      src={image}
+      src={imgSrc}
       alt={`${title1} ${title2}`.trim() || 'Card'}
       class="h-56 w-auto object-contain"
       loading="lazy"
@@ -35,10 +41,6 @@ const bg =
     {top1 && <div class="text-xl md:text-2xl">{top1}</div>}
     {top2 && <div class="text-xl md:text-2xl">{top2}</div>}
     {title1 && <div class="text-4xl md:text-5xl">{title1}</div>}
-    {title2 && (
-      <div class="text-4xl md:text-5xl">
-        {title2}
-      </div>
-    )}
+    {title2 && <div class="text-4xl md:text-5xl">{title2}</div>}
   </div>
 </div>
