@@ -1,10 +1,10 @@
 ---
 import Layout from '../../layouts/Layout.astro'
 
-// Para que funcione en GitHub Pages (subcarpeta /victoranuncios/)
+// Para GitHub Pages (subcarpeta /victoranuncios/)
 const BASE_URL = import.meta.env.BASE_URL
 
-// Nombres de archivos que tienes en: public/assets/services/3d/instalacion/
+// Imágenes que tienes en: public/assets/services/3d/instalacion/
 const files = [
   'img-1.png',
   'img-2.png',
@@ -13,11 +13,10 @@ const files = [
   // agrega más si quieres: 'img-5.png', ...
 ]
 
-// Construye las rutas absolutas desde /public
-const images = files.map((name) => `${BASE_URL}assets/services/3d/instalacion/${name}`)
+const images = files.map((n) => `${BASE_URL}assets/services/3d/instalacion/${n}`)
 ---
 
-<Layout title="Instalaciones | Victor Anuncios" description="Instalaciones de letreros luminosos y 3D en Arequipa.">
+<Layout title="Instalaciones | Victor Anuncios">
   <section class="py-16">
     <h1 class="text-center text-3xl md:text-4xl font-extrabold mb-8">
       Instalaciones

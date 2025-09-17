@@ -1,10 +1,22 @@
 ---
-interface Props { title?: string }
-const { title } = Astro.props
-import '../css/base.css'
-const BASE_URL = import.meta.env.BASE_URL;
----
+interface Props {
+  title?: string;
+  description?: string;
+}
+const { title, description } = Astro.props;
 
+import '../css/base.css';
+const BASE_URL = import.meta.env.BASE_URL;
+
+const siteTitle =
+  title
+    ? `${title} | Victor Anuncios`
+    : 'Victor Anuncios | Letreros Luminosos y Gigantografías en Arequipa';
+
+const metaDescription =
+  description ??
+  'Victor Anuncios en Arequipa. Letreros luminosos, letreros 3D, gigantografías, vinilos, stickers, tarjetas y publicidad con instalación profesional.';
+---
 <!doctype html>
 <html lang="es">
   <head>
@@ -12,16 +24,15 @@ const BASE_URL = import.meta.env.BASE_URL;
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- SEO -->
-    <title>{title ? `${title} | Victor Anuncios` : 'Victor Anuncios | Letreros Luminosos y Gigantografías en Arequipa'}</title>
-    <meta name="description" content="Victor Anuncios en Arequipa. Letreros luminosos, letreros 3D, gigantografías, vinilos, stickers, tarjetas y publicidad con instalación profesional." />
+    <title>{siteTitle}</title>
+    <meta name="description" content={metaDescription} />
     <meta name="keywords" content="letreros Arequipa, letreros luminosos Arequipa, gigantografías Arequipa, letreros 3D, vinilos publicitarios, Victor Anuncios" />
 
     <!-- Open Graph -->
-    <meta property="og:title" content="Victor Anuncios - Letreros y Publicidad en Arequipa" />
-    <meta property="og:description" content="Expertos en letreros luminosos, gigantografías y diseño gráfico en Arequipa. Instalación rápida y profesional." />
+    <meta property="og:title" content={siteTitle} />
+    <meta property="og:description" content={metaDescription} />
     <meta property="og:image" content={`${BASE_URL}assets/banners/banner-1.jpg`} />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://victoranuncios.com/" />
 
     <!-- Iconos -->
     <link rel="icon" type="image/png" href={`${BASE_URL}favicon.png`} sizes="64x64" />
@@ -39,7 +50,6 @@ const BASE_URL = import.meta.env.BASE_URL;
     <link href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css" rel="stylesheet" />
   </head>
   <body>
-
     <!-- ======= HEADER (desktop) ======= -->
     <div class="hidden md:block sticky top-0 z-50 bg-primary">
       <div class="max-w-7xl mx-auto h-24 px-4 md:px-8 lg:px-16 flex items-center">
@@ -76,13 +86,8 @@ const BASE_URL = import.meta.env.BASE_URL;
       </div>
     </nav>
 
-    <!-- Menú móvil (INICIA SIEMPRE CERRADO) -->
-    <div
-      id="menu"
-      class="hidden md:hidden bg-primary text-white fixed top-0 w-full z-40 pt-20 h-screen"
-      style="display:none"
-      inert
-    >
+    <!-- Menú móvil (inicia cerrado) -->
+    <div id="menu" class="hidden md:hidden bg-primary text-white fixed top-0 w-full z-40 pt-20 h-screen" style="display:none" inert>
       <div class="container mx-auto px-4">
         <div class="flex flex-col gap-4 py-4 text-lg">
           <a href={`${BASE_URL}`}>Inicio</a><hr class="divider" />
@@ -95,7 +100,7 @@ const BASE_URL = import.meta.env.BASE_URL;
       </div>
     </div>
 
-    <!-- ======= CONTENIDO (donde se inyectan las páginas) ======= -->
+    <!-- ======= CONTENIDO ======= -->
     <main id="content" class="relative z-10">
       <slot />
     </main>
@@ -162,18 +167,7 @@ const BASE_URL = import.meta.env.BASE_URL;
       </div>
     </footer>
 
-    <!-- ======= BOTONES FLOTANTES ======= -->
-    <div class="social-buttons">
-      <a href="https://www.instagram.com/" target="_blank" class="social instagram"><i class="bx bxl-instagram"></i></a>
-      <a href="https://www.facebook.com/VictorAnuncioss/" target="_blank" class="social facebook"><i class="bx bxl-facebook"></i></a>
-      <a href="https://www.tiktok.com/@victor.anuncios" target="_blank" class="social tiktok"><i class="bx bxl-tiktok"></i></a>
-    </div>
-
-    <a href="https://wa.me/51946182531?text=Hola,%20quiero%20más%20información" class="whatsapp" target="_blank">
-      <i class="bx bxl-whatsapp"></i>
-    </a>
-
-    <!-- JS del menú móvil (robusto) -->
+    <!-- JS del menú móvil -->
     <script is:raw>
       (function () {
         const menuToggle = document.getElementById('menu-toggle');
