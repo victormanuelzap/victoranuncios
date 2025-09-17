@@ -1,26 +1,36 @@
 ---
 import Layout from '../../layouts/Layout.astro'
 
-const images = ['img-1.png', 'img-2.png', 'img-3.png', 'img-4.png']
+// MUY IMPORTANTE para GitHub Pages (subruta /victoranuncios/)
+const BASE_URL = import.meta.env.BASE_URL
+
+// Agrega aquí los nombres de archivo que tengas en public/assets/services/3d/instalacion/
+const files = ['img-1.png', 'img-2.png', 'img-3.png', 'img-4.png']
+
+const images = files.map(
+  (name) => `${BASE_URL}assets/services/3d/instalacion/${name}`
+)
 ---
 
-<Layout title='Instalaciones'>
-    <main class='container py-10 gallery'>
-        <div>
-            <h1 class='text-4xl font-bold text-center mb-10'>Instalaciones</h1>
-        </div>
+<Layout title="Instalaciones | Victor Anuncios" description="Instalaciones de letreros luminosos y 3D en Arequipa.">
+  <section class="py-16">
+    <h1 class="text-center text-3xl md:text-4xl font-extrabold mb-8">
+      Instalaciones
+    </h1>
 
-        <div class='grid grid-cols-1 md:grid-cols-4 gap-10'>
-            {
-                images.map((image) => (
-                    <a href={`/assets/services/instalacion/${image}`}>
-                        <img
-                            alt='Letrero luminoso'
-                            src={`/assets/services/instalacion/${image}`}
-                        />
-                    </a>
-                ))
-            }
-        </div>
-    </main>
+    <div class="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 px-4">
+      {images.map((src, i) => (
+        <figure class="rounded-2xl overflow-hidden shadow-lg bg-white">
+          <img
+            src={src}
+            alt={`Letrero luminoso ${i + 1}`}
+            loading="lazy"
+            class="w-full h-48 md:h-56 object-cover"
+            width="800"
+            height="600"
+          />
+        </figure>
+      ))}
+    </div>
+  </section>
 </Layout>
