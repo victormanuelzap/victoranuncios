@@ -1,20 +1,13 @@
 ---
 import Layout from '../../layouts/Layout.astro'
 
-// Usar BASE_URL para que funcione en /victoranuncios/
-const BASE_URL = import.meta.env.BASE_URL
+// Importar imágenes desde src/assets (Astro genera la URL correcta)
+import img1 from '../../assets/services/instalacion/img-1.png'
+import img2 from '../../assets/services/instalacion/img-2.png'
+import img3 from '../../assets/services/instalacion/img-3.png'
+import img4 from '../../assets/services/instalacion/img-4.png'
 
-// Archivos que están en: public/assets/services/instalacion/
-const files = [
-  'img-1.png',
-  'img-2.png',
-  'img-3.png',
-  'img-4.png',
-  // agrega más si tienes: 'img-5.png', ...
-]
-
-// Construimos las URLs finales
-const images = files.map((n) => `${BASE_URL}assets/services/instalacion/${n}`)
+const images = [img1, img2, img3, img4]
 ---
 
 <Layout title="Instalaciones" description="Instalaciones de letreros luminosos y 3D en Arequipa.">
