@@ -1,6 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro'
-import banner1 from '../../assets/banners/banner-1.jpg'
+
 ---
 
 <Layout>
@@ -8,7 +8,7 @@ import banner1 from '../../assets/banners/banner-1.jpg'
   <!-- ======================= HERO (con overlay y CTA rojo) ======================= -->
   <section class="relative h-[70vh] min-h-[520px] w-full overflow-hidden">
     <img
-      src="/assets/banners/banner-1.jpg"
+      src={`${import.meta.env.BASE_URL}assets/banners/banner-1.jpg`}
       alt="Letreros 3D en acrílico"
       class="absolute inset-0 w-full h-full object-cover"
     />
