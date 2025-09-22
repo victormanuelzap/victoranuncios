@@ -1,198 +1,49 @@
 ---
-interface Props {
-  title?: string;
-  description?: string;
-}
-const { title, description } = Astro.props;
+const base = import.meta.env.BASE_URL;
 
-import '../css/base.css';
-const BASE_URL = import.meta.env.BASE_URL;
-
-const siteTitle =
-  title
-    ? `${title} | Victor Anuncios`
-    : 'Victor Anuncios | Letreros Luminosos y Gigantografías en Arequipa';
-
-const metaDescription =
-  description ??
-  'Victor Anuncios en Arequipa. Letreros luminosos, letreros 3D, gigantografías, vinilos, stickers, tarjetas y publicidad con instalación profesional.';
+// Si tu logo está en public/logo.png, esta ruta funciona:
+const logo = `${base}logo.png`;
+// Si lo tienes en src/assets, usa en su lugar:
+// const logo = new URL('../assets/logo.png', import.meta.url).href;
 ---
-<!doctype html>
+
 <html lang="es">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <!-- SEO -->
-    <title>{siteTitle}</title>
-    <meta name="description" content={metaDescription} />
-    <meta name="keywords" content="letreros Arequipa, letreros luminosos Arequipa, gigantografías Arequipa, letreros 3D, vinilos publicitarios, Victor Anuncios" />
-
-    <!-- Open Graph -->
-    <meta property="og:title" content={siteTitle} />
-    <meta property="og:description" content={metaDescription} />
-    <meta property="og:image" content={`${BASE_URL}assets/banners/banner-1.jpg`} />
-    <meta property="og:type" content="website" />
-
-    <!-- Iconos -->
-    <link rel="icon" type="image/png" href={`${BASE_URL}favicon.png`} sizes="64x64" />
-    <link rel="apple-touch-icon" href={`${BASE_URL}favicon.png`} />
-
-    <!-- Fuentes -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-
-    <!-- Boxicons -->
-    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
-
-    <!-- Splide slider -->
-    <link href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css" rel="stylesheet" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Victor Anuncios</title>
   </head>
-  <body>
-    <!-- ======= HEADER (desktop) ======= -->
-    <div class="hidden md:block sticky top-0 z-50 bg-primary">
-      <div class="max-w-7xl mx-auto h-24 px-4 md:px-8 lg:px-16 flex items-center">
-        <!-- LOGO -->
-        <a href={`${BASE_URL}`} class="flex items-center gap-2 md:mr-4">
-          <img src={`${BASE_URL}logo.png`} class="h-16 w-auto" alt="Victor Anuncios" />
-          <span class="font-bold text-white text-2xl drop-shadow-md">VICTOR ANUNCIOS</span>
+
+  <body class="min-h-screen flex flex-col">
+    <!-- HEADER / NAV -->
+    <header class="bg-red-600 text-white">
+      <div class="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
+        <a href={`${base}`} class="flex items-center gap-2">
+          <img src={logo} alt="Victor Anuncios" class="h-8 w-auto" />
+          <span class="font-bold hidden sm:inline">VICTOR ANUNCIOS</span>
         </a>
 
-        <!-- NAV -->
-        <nav class="ml-auto flex gap-6 text-white font-[500]">
-          <a href={`${BASE_URL}`}>INICIO</a>
-          <a href={`${BASE_URL}#productos`}>PRODUCTOS</a>
-          <a href={`${BASE_URL}#tienda`}>TIENDA</a>
-          <a href={`${BASE_URL}#servicios`}>SERVICIOS</a>
-          <a href={`${BASE_URL}#cursos`}>CURSOS</a>
-          <a href={`${BASE_URL}contacto`}>CONTACTO</a>
+        <nav class="flex items-center gap-4 text-sm font-semibold">
+          <a href={`${base}`}            class="hover:underline">INICIO</a>
+          <a href={`${base}productos`}   class="hover:underline">PRODUCTOS</a>
+          <a href={`${base}tienda`}      class="hover:underline">TIENDA</a>
+          <a href={`${base}servicios`}   class="hover:underline">SERVICIOS</a>
+          <a href={`${base}cursos`}      class="hover:underline">CURSOS</a>
+          <a href={`${base}contacto`}    class="hover:underline">CONTACTO</a>
         </nav>
       </div>
-    </div>
+    </header>
 
-    <!-- ======= HEADER (móvil) ======= -->
-    <nav class="bg-primary text-white sticky top-0 w-full z-50 md:hidden">
-      <div class="container mx-auto px-4">
-        <div class="flex items-center justify-between h-16">
-          <a href={`${BASE_URL}`} class="flex items-center gap-2" aria-label="Victor Anuncios">
-            <img src={`${BASE_URL}logo.png`} class="h-10 w-auto" alt="Victor Anuncios" />
-            <span class="sr-only">VICTOR ANUNCIOS</span>
-          </a>
-          <button id="menu-toggle" class="text-white focus:outline-none" aria-label="Abrir menú">
-            <svg class="h-6 w-6 fill-current" viewBox="0 0 24 24"><path d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"/></svg>
-          </button>
-        </div>
-      </div>
-    </nav>
-
-    <!-- Menú móvil (inicia cerrado) -->
-    <div id="menu" class="hidden md:hidden bg-primary text-white fixed top-0 w-full z-40 pt-20 h-screen" style="display:none" inert>
-      <div class="container mx-auto px-4">
-        <div class="flex flex-col gap-4 py-4 text-lg">
-          <a href={`${BASE_URL}`}>Inicio</a><hr class="divider" />
-          <a href={`${BASE_URL}#productos`}>Productos</a><hr class="divider" />
-          <a href={`${BASE_URL}#tienda`}>Tienda</a><hr class="divider" />
-          <a href={`${BASE_URL}#servicios`}>Servicios</a><hr class="divider" />
-          <a href={`${BASE_URL}#cursos`}>Cursos</a><hr class="divider" />
-          <a href={`${BASE_URL}contacto`}>Contacto</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- ======= CONTENIDO ======= -->
-    <main id="content" class="relative z-10">
+    <!-- CONTENIDO -->
+    <main class="flex-1">
       <slot />
     </main>
 
-    <!-- ======= FOOTER ======= -->
-    <footer class="bg-blue-700 py-10 mt-20">
-      <div class="pb-10">
-        <div class="flex gap-4 justify-center items-center">
-          <img src={`${BASE_URL}logo.png`} class="w-20" alt="logo" />
-          <div class="text-white font-bold text-2xl">Victor Anuncios</div>
-        </div>
-        <p class="text-center px-4 text-white pt-3">
-          Tarjetas de presentación, Letreros 3D, Cortes Láser, Gigantografías, Volantes, Imantados y Afiches.
-        </p>
-      </div>
-      <div class="container">
-        <div class="grid md:grid-cols-3 gap-10 md:gap-20">
-          <div class="space-y-5">
-            <div>
-              <h2 class="font-[500] text-white">Productos</h2>
-              <div class="h-[1px] bg-white w-full mb-2"></div>
-              <div class="text-gray-300 font-light">Banners</div>
-              <div class="text-gray-300 font-light">Marcos y Estructuras</div>
-              <div class="text-gray-300 font-light">Letreros 3D</div>
-            </div>
-            <div>
-              <h2 class="font-[500] text-white">Servicios</h2>
-              <div class="h-[1px] bg-white w-full mb-2"></div>
-              <div class="text-gray-300 font-light">Marketing Digital</div>
-              <div class="text-gray-300 font-light">Instalación</div>
-              <div class="text-gray-300 font-light">Técnico / formateo</div>
-            </div>
-          </div>
-          <div>
-            <h2 class="font-[500] text-white">Enlace</h2>
-            <div class="h-[1px] bg-white w-full mb-2"></div>
-            <div class="text-gray-300 font-light">Productos</div>
-            <div class="text-gray-300 font-light">Tienda</div>
-            <div class="text-gray-300 font-light">Servicios</div>
-            <div class="text-gray-300 font-light">Cursos</div>
-            <div class="text-gray-300 font-light">Contacto</div>
-          </div>
-          <div class="space-y-5">
-            <h2 class="font-[500] text-white">Contactos</h2>
-            <div class="h-[1px] bg-white w-full mb-2"></div>
-            <div class="text-gray-300 font-light">+51 946182531</div>
-            <div class="text-gray-300 font-light">@victoranuncios</div>
-            <div class="text-gray-300 font-light">Av. Ramón Castilla 1004, Cayma</div>
-            <div>
-              <h2 class="font-[500] text-white mt-6">Redes Sociales</h2>
-              <div class="h-[1px] bg-white w-full mb-2"></div>
-              <div class="text-white flex gap-4 mt-2 text-2xl">
-                <a href="https://www.instagram.com/" target="_blank"><i class="bx bxl-instagram"></i></a>
-                <a href="https://www.facebook.com/VictorAnuncioss" target="_blank"><i class="bx bxl-facebook"></i></a>
-                <a href="https://wa.me/51946182531" target="_blank"><i class="bx bxl-whatsapp"></i></a>
-                <a href="https://www.tiktok.com/@victor.anuncios" target="_blank"><i class="bx bxl-tiktok"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="text-center bg-[#011efe] text-gray-200 text-sm py-4 mt-8">
-        © 2024 Copyright: Victor anuncios
+    <!-- FOOTER (simple) -->
+    <footer class="bg-blue-700 text-white">
+      <div class="max-w-7xl mx-auto px-4 py-6 text-sm">
+        © {new Date().getFullYear()} Victor Anuncios
       </div>
     </footer>
-
-    <!-- JS del menú móvil -->
-    <script is:inline>
-      (function () {
-        const menuToggle = document.getElementById('menu-toggle');
-        const menu = document.getElementById('menu');
-        if (!menu || !menuToggle) return;
-
-        function closeMenu() {
-          menu.classList.add('hidden');
-          menu.style.display = 'none';
-          menu.setAttribute('inert', '');
-        }
-        function openMenu() {
-          menu.classList.remove('hidden');
-          menu.style.display = 'block';
-          menu.removeAttribute('inert');
-        }
-        // Estado inicial: cerrado
-        closeMenu();
-
-        menuToggle.addEventListener('click', () => {
-          const isHidden = menu.classList.contains('hidden');
-          if (isHidden) openMenu(); else closeMenu();
-        });
-        menu.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
-      })();
-    </script>
   </body>
 </html>
