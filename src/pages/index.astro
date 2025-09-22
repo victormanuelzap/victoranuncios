@@ -2,7 +2,7 @@
 import Layout from '../layouts/Layout.astro'
 const base = import.meta.env.BASE_URL; // '/' en dev, '/victoranuncios/' en Pages
 import Card from '../components/Card.astro'  // ajusta la ruta si tu index está en otra carpeta
-import imgCaja from '../assets/images/cards/letrero-caja-luz.png?url'
+
 ---
 
 <Layout>
@@ -27,7 +27,7 @@ import imgCaja from '../assets/images/cards/letrero-caja-luz.png?url'
     </div>
 <div class="mt-5 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
   <!-- PRUEBA solo “caja luz” -->
-  <Card image={imgCaja} href={`${base}servicios/letrero-luminoso`} />
+  <Card image="/assets/images/cards/letrero-caja-luz.png?v=6" href={`${base}servicios/letrero-luminoso`} />
   <!-- luego repites con más imágenes si quieres -->
 </div>
 
