@@ -23,7 +23,11 @@ const BASE_URL = import.meta.env.BASE_URL
 // - Si viene con o sin "/" delante, la ajusta con BASE_URL
 const imgSrc = /^https?:\/\//i.test(image)
   ? image
-  : `${BASE_URL}${image.replace(/^\//, '')}`
+  : `${BASE_URL}${image.replace(/^\/+/, '')}`   // <-- esta es la clave
+
+
+
+
 
 const bg = variant === 'red' ? 'bg-red-600' : 'bg-blue-700'
 ---
@@ -37,10 +41,12 @@ const bg = variant === 'red' ? 'bg-red-600' : 'bg-blue-700'
     />
   </div>
 
-  <div class="mt-6 text-center text-white uppercase font-extrabold leading-tight">
-    {top1 && <div class="text-xl md:text-2xl">{top1}</div>}
-    {top2 && <div class="text-xl md:text-2xl">{top2}</div>}
-    {title1 && <div class="text-4xl md:text-5xl">{title1}</div>}
-    {title2 && <div class="text-4xl md:text-5xl">{title2}</div>}
-  </div>
+  <!-- ⬇️ PÉGALO AQUÍ, debajo de la imagen -->
+<div class="mt-4 w-full">
+  <a
+    href={`${BASE_URL}servicios/letrero-luminoso`}
+    class="block w-full text-center text-white text-sm font-semibold bg-red-600 hover:bg-red-700 px-4 py-2 rounded-lg"
+  >
+    Ver más
+  </a>
 </div>
