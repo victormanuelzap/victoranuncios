@@ -1,14 +1,13 @@
 ---
 import Layout from '../layouts/Layout.astro'
-import banner from '../assets/slider/banner-1.jpg' // tu portada
+import banner from '../assets/slider/banner-1.jpg'
 ---
 
 <Layout>
-
-  <!-- ======================= HERO SOLO CON IMAGEN ======================= -->
+  <!-- HERO solo con imagen -->
   <section class="w-full">
     <img
-      src={banner.src}  /* usa .src para evitar el error de ImageMetadata */
+      src={banner.src}
       alt="Letreros 3D Victor Anuncios"
       class="w-full object-cover block"
       loading="lazy"
