@@ -1,7 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro'
 const base = import.meta.env.BASE_URL; // '/' en dev, '/victoranuncios/' en Pages
-import Card from '../components/Card.astro'  
+import Card from '../components/Card.astro'   
 
 ---
 
@@ -25,12 +25,13 @@ import Card from '../components/Card.astro'
     <div class="flex justify-start">
       <h2 class="text-sm font-extrabold tracking-widest text-blue-700">NUESTROS PRODUCTOS</h2>
     </div>
-<div class="mt-5 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-  <!-- PRUEBA solo “caja luz” -->
- <Card image="/assets/images/cards/letrero-caja-luz.png" href={`${base}servicios/letrero-luminoso`} />
-
-  <!-- luego repites con más imágenes si quieres -->
-</div>
+ <section class="mt-5 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+    <!-- PRUEBA solo “caja luz” -->
+    <Card
+      image="/assets/images/cards/letrero-caja-luz.png"
+      href={`${base}servicios/letrero-luminoso`}
+    />
+  </section>
 
       <!-- Letrero 3D -->
       <a href={`${base}servicios/3d`} class="group">
