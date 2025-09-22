@@ -1,20 +1,16 @@
 ---
 import Layout from '../layouts/Layout.astro'
-
-// Rutas SEGURAS (funcionan en dev y build con base en GitHub Pages)
-const heroDesktop = new URL('../assets/slider/banner-1.jpg', import.meta.url).href;
-const heroMobile  = new URL('../assets/slider/hero-mobile.jpg', import.meta.url).href;
+const base = import.meta.env.BASE_URL;
 ---
 
 <Layout>
-  <!-- ======================= HERO (responsive) ======================= -->
   <section class="w-full overflow-hidden">
     <picture>
       <!-- Móvil -->
-      <source srcset={heroMobile} media="(max-width: 768px)" />
+      <source srcset={`${base}slider/hero-mobile.jpg`} media="(max-width: 768px)" />
       <!-- Desktop -->
       <img
-        src={heroDesktop}
+        src={`${base}slider/banner-1.jpg`}
         alt="Letreros 3D Victor Anuncios"
         class="block w-full h-[46vh] md:h-[70vh] object-cover object-left md:object-center"
         loading="eager"
