@@ -3,16 +3,7 @@
 const base = import.meta.env.BASE_URL; // '/' en dev, '/victoranuncios/' en Pages
 const bust = Date.now();               // solo para romper caché ahora
 ---
-<a href={`${base}`} class="flex items-center gap-2 shrink-0">
-  <img
-    src={`${base}images/logo.png?v=${bust}`}   <!-- TU ARCHIVO -->
-    alt="Victor Anuncios"
-    class="block h-8 w-auto object-contain min-w-[2rem]"
-    loading="eager"
-    decoding="sync"
-  />
-  <span class="font-extrabold tracking-wide hidden sm:inline">VICTOR ANUNCIOS</span>
-</a>
+
 
 <!doctype html>
 <html lang="es">
@@ -30,7 +21,17 @@ const bust = Date.now();               // solo para romper caché ahora
           <img src={`${base}images/logo-va.svg`} alt="Victor Anuncios" class="h-8 w-auto" />
           <span class="font-extrabold tracking-wide hidden sm:inline">VICTOR ANUNCIOS</span>
         </a>
-
+        
+<a href={`${base}`} class="flex items-center gap-2 shrink-0">
+  <img
+    src={`${base}images/logo.png?v=${bust}`}   <!-- TU ARCHIVO -->
+    alt="Victor Anuncios"
+    class="block h-8 w-auto object-contain min-w-[2rem]"
+    loading="eager"
+    decoding="sync"
+  />
+  <span class="font-extrabold tracking-wide hidden sm:inline">VICTOR ANUNCIOS</span>
+</a>
         <!-- Botón menú solo móvil -->
         <button class="md:hidden p-2 rounded hover:bg-white/10" aria-controls="nav-panel" aria-expanded="false" data-menu-btn>
           <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
