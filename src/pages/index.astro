@@ -1,19 +1,18 @@
 ---
 import Layout from '../layouts/Layout.astro'
+import heroDesktop from '../assets/slider/banner-1.jpg?url'
+import heroMobile from '../assets/slider/hero-mobile.jpg?url'
 ---
 
 <Layout>
-  <!-- ======================= HERO responsive con <picture> ======================= -->
+  <!-- HERO responsive con imports ?url -->
   <section class="w-full overflow-hidden">
     <picture>
-      <!-- Versión móvil -->
-      <source
-        srcset={`${import.meta.env.BASE_URL}assets/images/slider/hero-mobile.jpg`}
-        media="(max-width: 768px)"
-      />
-      <!-- Versión desktop -->
+      <!-- Móvil -->
+      <source srcset={heroMobile} media="(max-width: 768px)" />
+      <!-- Desktop -->
       <img
-        src={`${import.meta.env.BASE_URL}assets/images/slider/banner-1.jpg`}
+        src={heroDesktop}
         alt="Letreros 3D Victor Anuncios"
         class="block w-full h-[46vh] md:h-[70vh] object-cover object-left md:object-center"
         loading="eager"
@@ -21,6 +20,9 @@ import Layout from '../layouts/Layout.astro'
       />
     </picture>
   </section>
+
+  <!-- deja aquí debajo el resto de tu contenido tal como lo tienes -->
+
 
   <!-- ======================= CINTA NEGRA DE PROMESA ======================= -->
   <section aria-label="Promesa" class="bg-black text-white">
