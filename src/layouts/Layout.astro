@@ -1,7 +1,18 @@
 ---
 // NO hace falta importar nada aquí
 const base = import.meta.env.BASE_URL; // '/' en dev, '/victoranuncios/' en Pages
+const bust = Date.now();               // solo para romper caché ahora
 ---
+<a href={`${base}`} class="flex items-center gap-2 shrink-0">
+  <img
+    src={`${base}images/logo.png?v=${bust}`}   <!-- TU ARCHIVO -->
+    alt="Victor Anuncios"
+    class="block h-8 w-auto object-contain min-w-[2rem]"
+    loading="eager"
+    decoding="sync"
+  />
+  <span class="font-extrabold tracking-wide hidden sm:inline">VICTOR ANUNCIOS</span>
+</a>
 
 <!doctype html>
 <html lang="es">
