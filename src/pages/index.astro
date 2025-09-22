@@ -3,15 +3,15 @@ import Layout from '../layouts/Layout.astro'
 ---
 
 <Layout>
-  <!-- HERO responsive: móvil usa hero-mobile.jpg, desktop usa banner-1.jpg -->
+  <!-- HERO responsive con <picture> -->
   <section class="w-full overflow-hidden">
     <picture>
-      <!-- Móvil -->
+      <!-- Versión para pantallas chicas -->
       <source
         srcset={`${import.meta.env.BASE_URL}assets/images/slider/hero-mobile.jpg`}
         media="(max-width: 768px)"
       />
-      <!-- Desktop (default) -->
+      <!-- Versión desktop por defecto -->
       <img
         src={`${import.meta.env.BASE_URL}assets/images/slider/banner-1.jpg`}
         alt="Letreros 3D Victor Anuncios"
@@ -22,7 +22,9 @@ import Layout from '../layouts/Layout.astro'
     </picture>
   </section>
 
-  <!-- …resto de tu página… -->
+  <!-- …deja aquí el resto de tu página tal como la tienes… -->
+
+
 </Layout>
 
 
