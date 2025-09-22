@@ -17,9 +17,10 @@ const bust = Date.now();               // solo para romper caché ahora
       <div class="max-w-7xl mx-auto px-4 h-14 flex items-center justify-between">
         <!-- Logo (no se encoge en móvil) -->
 
-        <a href={`${base}`} class="flex items-center gap-2 shrink-0">
+        <!--codigo que cambiamos nosotros para qe funcione el logo -->
+ <a href={`${base}`} class="flex items-center gap-2 shrink-0">
   <img
-    src={`${base}logo.png?v=2`}   <!-- está en public/logo.png -->
+    src={`${base}logo.png?v=${bust}`}  
     alt="Victor Anuncios"
     class="h-8 w-auto object-contain min-w-[2rem]"
     loading="eager"
