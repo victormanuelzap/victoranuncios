@@ -1,18 +1,30 @@
 ---
 import Layout from '../layouts/Layout.astro'
-import banner from '../assets/slider/banner-1.jpg'
 ---
 
 <Layout>
-  <!-- HERO solo con imagen -->
-  <section class="w-full">
-    <img
-      src={banner.src}
-      alt="Letreros 3D Victor Anuncios"
-      class="w-full object-cover block"
-      loading="lazy"
-    />
+  <!-- HERO responsive: móvil usa hero-mobile.jpg, desktop usa banner-1.jpg -->
+  <section class="w-full overflow-hidden">
+    <picture>
+      <!-- Móvil -->
+      <source
+        srcset={`${import.meta.env.BASE_URL}assets/images/slider/hero-mobile.jpg`}
+        media="(max-width: 768px)"
+      />
+      <!-- Desktop (default) -->
+      <img
+        src={`${import.meta.env.BASE_URL}assets/images/slider/banner-1.jpg`}
+        alt="Letreros 3D Victor Anuncios"
+        class="block w-full h-[46vh] md:h-[70vh] object-cover object-left md:object-center"
+        loading="eager"
+        fetchpriority="high"
+      />
+    </picture>
   </section>
+
+  <!-- …resto de tu página… -->
+</Layout>
+
 
   <!-- ======================= CINTA NEGRA DE PROMESA ======================= -->
   <section aria-label="Promesa" class="bg-black text-white">
