@@ -1,49 +1,70 @@
 ---
-const base = import.meta.env.BASE_URL;
-
-// Si tu logo está en public/logo.png, esta ruta funciona:
-const logo = `${base}logo.png`;
-// Si lo tienes en src/assets, usa en su lugar:
-// const logo = new URL('../assets/logo.png', import.meta.url).href;
+// NO hace falta importar nada aquí
+const base = import.meta.env.BASE_URL; // '/' en dev, '/victoranuncios/' en Pages
 ---
 
+<!doctype html>
 <html lang="es">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Victor Anuncios</title>
+    <slot name="head" />
   </head>
-
-  <body class="min-h-screen flex flex-col">
-    <!-- HEADER / NAV -->
-    <header class="bg-red-600 text-white">
-      <div class="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
-        <a href={`${base}`} class="flex items-center gap-2">
-          <img src={logo} alt="Victor Anuncios" class="h-8 w-auto" />
-          <span class="font-bold hidden sm:inline">VICTOR ANUNCIOS</span>
+  <body class="min-h-screen bg-white">
+    <!-- HEADER -->
+    <header class="sticky top-0 z-50 bg-red-600 text-white">
+      <div class="max-w-7xl mx-auto px-4 h-14 flex items-center justify-between">
+        <!-- Logo (no se encoge en móvil) -->
+        <a href={`${base}`} class="flex items-center gap-2 shrink-0">
+          <img src={`${base}images/logo-va.svg`} alt="Victor Anuncios" class="h-8 w-auto" />
+          <span class="font-extrabold tracking-wide hidden sm:inline">VICTOR ANUNCIOS</span>
         </a>
 
-        <nav class="flex items-center gap-4 text-sm font-semibold">
-          <a href={`${base}`}            class="hover:underline">INICIO</a>
-          <a href={`${base}productos`}   class="hover:underline">PRODUCTOS</a>
-          <a href={`${base}tienda`}      class="hover:underline">TIENDA</a>
-          <a href={`${base}servicios`}   class="hover:underline">SERVICIOS</a>
-          <a href={`${base}cursos`}      class="hover:underline">CURSOS</a>
-          <a href={`${base}contacto`}    class="hover:underline">CONTACTO</a>
+        <!-- Botón menú solo móvil -->
+        <button class="md:hidden p-2 rounded hover:bg-white/10" aria-controls="nav-panel" aria-expanded="false" data-menu-btn>
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+
+        <!-- Nav desktop -->
+        <nav class="hidden md:flex items-center gap-6 font-semibold tracking-wide">
+          <a href={`${base}`} class="hover:text-yellow-200">INICIO</a>
+          <a href={`${base}#productos`} class="hover:text-yellow-200">PRODUCTOS</a>
+          <a href={`${base}tienda`} class="hover:text-yellow-200">TIENDA</a>
+          <a href={`${base}servicios`} class="hover:text-yellow-200">SERVICIOS</a>
+          <a href={`${base}cursos`} class="hover:text-yellow-200">CURSOS</a>
+          <a href={`${base}#contacto`} class="hover:text-yellow-200">CONTACTO</a>
         </nav>
       </div>
+
+      <!-- Panel móvil -->
+      <div id="nav-panel" class="md:hidden hidden border-t border-white/10">
+        <nav class="px-4 py-3 flex flex-col gap-2 bg-red-600 font-semibold">
+          <a href={`${base}`} class="py-1">INICIO</a>
+          <a href={`${base}#productos`} class="py-1">PRODUCTOS</a>
+          <a href={`${base}tienda`} class="py-1">TIENDA</a>
+          <a href={`${base}servicios`} class="py-1">SERVICIOS</a>
+          <a href={`${base}cursos`} class="py-1">CURSOS</a>
+          <a href={`${base}#contacto`} class="py-1">CONTACTO</a>
+        </nav>
+      </div>
+
+      <script is:inline>
+        const btn = document.querySelector('[data-menu-btn]');
+        const panel = document.querySelector('#nav-panel');
+        btn?.addEventListener('click', () => {
+          const hidden = panel.classList.toggle('hidden');
+          btn.setAttribute('aria-expanded', String(!hidden));
+        });
+      </script>
     </header>
 
-    <!-- CONTENIDO -->
-    <main class="flex-1">
+    <!-- CONTENIDO DE LAS PÁGINAS -->
+    <main>
       <slot />
     </main>
 
-    <!-- FOOTER (simple) -->
-    <footer class="bg-blue-700 text-white">
-      <div class="max-w-7xl mx-auto px-4 py-6 text-sm">
-        © {new Date().getFullYear()} Victor Anuncios
-      </div>
-    </footer>
+    <slot name="scripts" />
   </body>
 </html>
