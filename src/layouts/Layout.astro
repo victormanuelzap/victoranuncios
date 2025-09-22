@@ -13,21 +13,15 @@ const bust = Date.now();               // solo para romper caché ahora
   </head>
   <body class="min-h-screen bg-white">
     <!-- HEADER -->
-    <header class="sticky top-0 z-50 bg-white-600 text-black">
+    <header class="fixed top-0 left-0 right-0 z-50 w-full bg-white text-black border-b border-neutral-200">
       <div class="max-w-7xl mx-auto px-4 h-14 flex items-center justify-between">
         <!-- Logo (no se encoge en móvil) -->
 
         <!--codigo que cambiamos nosotros para qe funcione el logo -->
  <a href={`${base}`} class="flex items-center gap-2 shrink-0">
-  <img
-    src={`${base}logo.png?v=${bust}`}  
-    alt="Victor Anuncios"
-    class="h-8 w-auto object-contain min-w-[2rem]"
-    loading="eager"
-    decoding="sync"
-  />
-  <span class="font-extrabold tracking-wide hidden sm:inline">VICTOR ANUNCIOS</span>
+  <img src={`${base}logo.png`} alt="Victor Anuncios" class="h-8 w-auto object-contain min-w-[2rem]" />
 </a>
+
 
         <!-- Botón menú solo móvil -->
         <button class="md:hidden p-2 rounded hover:bg-white/10" aria-controls="nav-panel" aria-expanded="false" data-menu-btn>
@@ -48,7 +42,8 @@ const bust = Date.now();               // solo para romper caché ahora
       </div>
 
       <!-- Panel móvil -->
-      <div id="nav-panel" class="md:hidden hidden border-t border-neutral-200"  >
+    <div id="nav-panel" class="lg:hidden hidden absolute top-14 left-0 right-0 border-t border-neutral-200 z-40">
+
         <nav class="px-4 py-3 flex flex-col gap-2 bg-red-600 font-semibold">
           <a href={`${base}`} class="py-1">Inicio</a>
           <a href={`${base}#productos`} class="py-1">Productos</a>
@@ -70,7 +65,7 @@ const bust = Date.now();               // solo para romper caché ahora
     </header>
 
     <!-- CONTENIDO DE LAS PÁGINAS -->
-    <main>
+  <main class="pt-14">
       <slot />
     </main>
 
