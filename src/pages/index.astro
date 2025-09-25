@@ -1,14 +1,23 @@
 ---
 import Layout from '../layouts/Layout.astro'
----
 
+// Base del sitio (en GitHub Pages será /victoranuncios/)
+const BASE = import.meta.env.BASE_URL
+
+// Normaliza rutas locales y evita // al concatenar
+const src = (p: string) =>
+  /^https?:\/\//i.test(p) ? p : `${BASE}${p.replace(/^\/+/, '')}`
+
+// (Opcional) si aún tienes nombres de archivo con espacios, codifícalos:
+const enc = (p: string) => p.replace(/ /g, '%20')
+---
 <Layout>
   <!-- HERO -->
   <section class="w-full overflow-hidden">
     <picture>
-      <source srcset="/images/slider/hero-mobile.jpg" media="(max-width: 768px)" />
+      <source srcset={src('images/slider/hero-mobile.jpg')} media="(max-width: 768px)" />
       <img
-        src="/images/slider/banner-1.jpg"
+        src={src('images/slider/banner-1.jpg')}
         alt="Letreros 3D Victor Anuncios"
         class="block w-full h-[46vh] md:h-[70vh] object-cover object-left md:object-center"
         loading="eager"
@@ -23,29 +32,23 @@ import Layout from '../layouts/Layout.astro'
       <h2 class="text-sm font-extrabold tracking-widest text-blue-700">NUESTROS PRODUCTOS</h2>
     </div>
 
-    <!-- Grid de cards rectangulares (verticales) -->
     <div class="mt-5 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-
       <!-- Letrero Luminoso -->
-      <a href="/servicios/letrero-luminoso" class="group block">
+      <a href={`${BASE}servicios/letrero-luminoso`} class="group block">
         <article class="bg-white rounded-2xl shadow-sm ring-1 ring-gray-100 hover:shadow-md transition overflow-hidden">
           <div class="p-4">
-            <!-- Cambiado a vertical: aspect-[2/3]. Si lo quieres menos alto: aspect-[3/4] -->
             <div class="aspect-[2/3] w-full overflow-hidden rounded-xl bg-gray-50">
               <img
-                src="/assets/images/cards/5-min 1.png"
+                src={src(enc('assets/images/cards/5-min 1.png'))}   <!-- mejor renombra a 5-min-1.png -->
                 alt="Letrero luminoso"
                 class="h-full w-full object-contain group-hover:scale-[1.02] transition"
                 loading="lazy"
               />
             </div>
-
             <div class="mt-4">
               <h3 class="text-base md:text-lg font-extrabold text-gray-800 leading-tight">Letrero Luminoso</h3>
               <p class="text-[13px] text-gray-500">Diseño, fabricación e instalación</p>
             </div>
-
-            <!-- Botón estilo grande como el ejemplo -->
             <div class="mt-4">
               <div class="w-full text-center text-white text-[15px] font-semibold bg-red-600 hover:bg-red-700 px-4 py-3 rounded-xl">
                 Ver más
@@ -56,23 +59,21 @@ import Layout from '../layouts/Layout.astro'
       </a>
 
       <!-- Letrero 3D -->
-      <a href="/servicios/3d" class="group block">
+      <a href={`${BASE}servicios/3d`} class="group block">
         <article class="bg-white rounded-2xl shadow-sm ring-1 ring-gray-100 hover:shadow-md transition overflow-hidden">
           <div class="p-4">
             <div class="aspect-[2/3] w-full overflow-hidden rounded-xl bg-gray-50">
               <img
-                src="/assets/images/cards/10-min-1.png"
+                src={src('assets/images/cards/10-min-1.png')}
                 alt="Letrero 3D"
                 class="h-full w-full object-contain group-hover:scale-[1.02] transition"
                 loading="lazy"
               />
             </div>
-
             <div class="mt-4">
               <h3 class="text-base md:text-lg font-extrabold text-gray-800 leading-tight">Letrero 3D</h3>
               <p class="text-[13px] text-gray-500">Diseño, fabricación e instalación</p>
             </div>
-
             <div class="mt-4">
               <div class="w-full text-center text-white text-[15px] font-semibold bg-red-600 hover:bg-red-700 px-4 py-3 rounded-xl">
                 Ver más
@@ -83,23 +84,21 @@ import Layout from '../layouts/Layout.astro'
       </a>
 
       <!-- Tarjetas -->
-      <a href="/tarjetas" class="group block">
+      <a href={`${BASE}tarjetas`} class="group block">
         <article class="bg-white rounded-2xl shadow-sm ring-1 ring-gray-100 hover:shadow-md transition overflow-hidden">
           <div class="p-4">
             <div class="aspect-[2/3] w-full overflow-hidden rounded-xl bg-gray-50">
               <img
-                src="/assets/card-images/tarjeta-presentacion.jpg"
+                src={src('assets/card-images/tarjeta-presentacion.jpg')}
                 alt="Tarjetas personales"
                 class="h-full w-full object-contain group-hover:scale-[1.02] transition"
                 loading="lazy"
               />
             </div>
-
             <div class="mt-4">
               <h3 class="text-base md:text-lg font-extrabold text-gray-800 leading-tight">Tarjetas Personales</h3>
               <p class="text-[13px] text-gray-500">Diseño e impresión</p>
             </div>
-
             <div class="mt-4">
               <div class="w-full text-center text-white text-[15px] font-semibold bg-red-600 hover:bg-red-700 px-4 py-3 rounded-xl">
                 Ver más
@@ -110,23 +109,21 @@ import Layout from '../layouts/Layout.astro'
       </a>
 
       <!-- Volantes -->
-      <a href="/volantes" class="group block">
+      <a href={`${BASE}volantes`} class="group block">
         <article class="bg-white rounded-2xl shadow-sm ring-1 ring-gray-100 hover:shadow-md transition overflow-hidden">
           <div class="p-4">
             <div class="aspect-[2/3] w-full overflow-hidden rounded-xl bg-gray-50">
               <img
-                src="/assets/images/cards/2-min-1.png"
+                src={src('assets/images/cards/2-min-1.png')}
                 alt="Volantes publicitarios"
                 class="h-full w-full object-contain group-hover:scale-[1.02] transition"
                 loading="lazy"
               />
             </div>
-
             <div class="mt-4">
               <h3 class="text-base md:text-lg font-extrabold text-gray-800 leading-tight">Volantes Publicitarios</h3>
-              <p class="text-[13px] text-gray-500">Diseño e impresión</p>
+              <p class="text:[13px] text-gray-500">Diseño e impresión</p>
             </div>
-
             <div class="mt-4">
               <div class="w-full text-center text-white text-[15px] font-semibold bg-red-600 hover:bg-red-700 px-4 py-3 rounded-xl">
                 Ver más
@@ -135,7 +132,6 @@ import Layout from '../layouts/Layout.astro'
           </div>
         </article>
       </a>
-
     </div>
   </section>
 </Layout>
